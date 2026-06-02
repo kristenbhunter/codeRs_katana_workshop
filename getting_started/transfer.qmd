@@ -1,0 +1,19 @@
+---
+title: "Transferring files"
+---
+
+## Options for transferring files
+
+- **Option 1**: Use a file transfer program
+  - This option is probably best for most people.
+  - Katana recommends FileZilla.
+- **Option 2**: Use git
+  - Requires command-line knowledge of git.
+  - Ensures consistency of file versions across machines.
+  - No need to remember if the file on katana is the latest version!
+
+
+## Transfer a file
+
+- Create a script, or download from the github repo scripts/test_script.R
+- Your script should print something out.

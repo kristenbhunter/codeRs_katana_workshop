@@ -54,5 +54,40 @@
     "title": "Logging in",
     "section": "",
     "text": "Accessing katana\n\nYou will need to get a little familiar with using a terminal.\nYou can access katana using SSH (Secure SHell) from your local machine.\n\n\n\nMac\nOpen up Terminal and SSH into katana:\n\n\n\nWindows\nFirst you will need to download a SSH client such as\n\n\n\nWelcome message\nIf you are successful you will see the following"
+  },
+  {
+    "objectID": "getting_started/commands.html",
+    "href": "getting_started/commands.html",
+    "title": "Shell commands",
+    "section": "",
+    "text": "If you haven’t used a shell before to access a computer, it can be intimidating! But knowing just a few commands can get you very far.\nAlso known as bash, unix, or linux commands."
+  },
+  {
+    "objectID": "getting_started/commands.html#shell-commands",
+    "href": "getting_started/commands.html#shell-commands",
+    "title": "Shell commands",
+    "section": "",
+    "text": "If you haven’t used a shell before to access a computer, it can be intimidating! But knowing just a few commands can get you very far.\nAlso known as bash, unix, or linux commands."
+  },
+  {
+    "objectID": "getting_started/commands.html#navigate",
+    "href": "getting_started/commands.html#navigate",
+    "title": "Shell commands",
+    "section": "Navigate",
+    "text": "Navigate\n\ncd: change directory\nls: list\npwd: print working directory"
+  },
+  {
+    "objectID": "getting_started/commands.html#file-management",
+    "href": "getting_started/commands.html#file-management",
+    "title": "Shell commands",
+    "section": "File management",
+    "text": "File management\n\nmkdir: make a directory\nrmdir: remove a directory\ncp: copy files\nmv: move files\nrm: remove files"
+  },
+  {
+    "objectID": "getting_started/commands.html#recursion",
+    "href": "getting_started/commands.html#recursion",
+    "title": "Shell commands",
+    "section": "Recursion",
+    "text": "Recursion\n\nAdding -r makes the command recursive, which means it will apply to all files in a directory, not just one at a time.\nMake sure you know what you are doing! rm -r deletes a whole directory!"
   }
 ]

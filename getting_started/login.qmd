@@ -4,8 +4,10 @@ title: "Logging in"
 
 ### Accessing katana
 
-- You will need to get a little familiar with using a terminal.
-- You can access katana using SSH (Secure SHell) from your local machine.
+
+- I will only be discussing accessing katana via terminal.
+- You can also access through [Katana OnDeman](https://docs.restech.unsw.edu.au/using_katana/accessing_katana/), a graphical session where you can access Rstudio 
+- To access via terminal, use SSH (Secure SHell) from your local machine.
 
 ### Mac
 
