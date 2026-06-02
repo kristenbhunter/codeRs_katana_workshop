@@ -1,0 +1,35 @@
+project:
+  type: website
+  output-dir: site
+
+website:
+  title: "CodeRs: Scaling up with R and Katana"
+  description: ""
+  navbar:
+    background: "#e6f4f1"
+    foreground: dark
+    left:
+      - text: Getting Started
+        menu:
+          - href: getting_started/login.qmd
+            text: "Logging in"
+          - href: getting_starged/commands.qmd
+            text: "Shell commands"
+    right:
+      - icon: github
+        href: https://github.com/kristenbhunter/codeRs_katana_workshop
+        aria-label: GitHub
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    code-fold: false
+    code-tools: true
+    code-copy: true
+
+execute:
+  freeze: auto
+  warning: false
+  message: false

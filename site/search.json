@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CodeRs workshop: Scaling up with R and Katana",
+    "section": "",
+    "text": "Best subset selection — identifying the optimal \\(k\\) predictors from \\(p\\) candidates — is fundamental for building interpretable and parsimonious statistical models, but the underlying combinatorial problem is NP-hard.\nCOMBSS (Continuous Optimisation for Best Subset Selection) overcomes this barrier by reformulating the discrete problem as a continuous optimisation, making it scalable to high-dimensional settings where \\(p\\) far exceeds \\(n\\).\nThis presentation walks through the framework for linear, logistic, and multinomial regression, illustrates its performance on simulated data and two real biomedical applications — cancer gene-expression classification (\\(p = 2{,}308\\) genes) and a rice GWAS (\\(p \\approx 158{,}000\\) SNPs) — and demonstrates the open-source combss (R and Python) packages with practical examples."
+  },
+  {
+    "objectID": "index.html#abstract",
+    "href": "index.html#abstract",
+    "title": "CodeRs workshop: Scaling up with R and Katana",
+    "section": "",
+    "text": "Best subset selection — identifying the optimal \\(k\\) predictors from \\(p\\) candidates — is fundamental for building interpretable and parsimonious statistical models, but the underlying combinatorial problem is NP-hard.\nCOMBSS (Continuous Optimisation for Best Subset Selection) overcomes this barrier by reformulating the discrete problem as a continuous optimisation, making it scalable to high-dimensional settings where \\(p\\) far exceeds \\(n\\).\nThis presentation walks through the framework for linear, logistic, and multinomial regression, illustrates its performance on simulated data and two real biomedical applications — cancer gene-expression classification (\\(p = 2{,}308\\) genes) and a rice GWAS (\\(p \\approx 158{,}000\\) SNPs) — and demonstrates the open-source combss (R and Python) packages with practical examples."
+  },
+  {
+    "objectID": "index.html#research-collaborators",
+    "href": "index.html#research-collaborators",
+    "title": "CodeRs workshop: Scaling up with R and Katana",
+    "section": "Research collaborators",
+    "text": "Research collaborators\n\n\n\nName\nAffiliation\n\n\n\n\nSarat Moka (presenter)\nUNSW Sydney\n\n\nZdravko Botev\nUNSW Sydney\n\n\nBenoit Liquet\nUniversité de Pau et des Pays de l’Adour & Macquarie University\n\n\nAnant Mathur\nUNSW Sydney\n\n\nSamuel Muller\nMacquarie University\n\n\nHouying Zhu\nMacquarie University"
+  },
+  {
+    "objectID": "index.html#how-this-demonstration-is-structured",
+    "href": "index.html#how-this-demonstration-is-structured",
+    "title": "CodeRs workshop: Scaling up with R and Katana",
+    "section": "How this demonstration is structured",
+    "text": "How this demonstration is structured\nEach section below has its own page; navigate via the top menu or click through in order.\n\n\n\nSection\nPages\n\n\n\n\nMotivation — what sparse-constrained GLM is, and why MIO / lasso are not the last word\nSparse GLM → MIO → Lasso → COMBSS (our method)\n\n\nMethodology — Boolean relaxation and the homotopy Frank-Wolfe algorithm\nRelaxation → Homotopy Frank-Wolfe\n\n\nDemos — five runnable demos in R and Python\nLinear sim · HD logistic · Khan SRBCT · Rice GWAS · Comparisons\n\n\nUse it yourself\nInstall · References"
+  },
+  {
+    "objectID": "index.html#packages",
+    "href": "index.html#packages",
+    "title": "CodeRs workshop: Scaling up with R and Katana",
+    "section": "Packages",
+    "text": "Packages\n\nR — combss on CRAN — install.packages(\"combss\")\nPython — combss on PyPI — pip install combss"
+  },
+  {
+    "objectID": "index.html#links",
+    "href": "index.html#links",
+    "title": "CodeRs workshop: Scaling up with R and Katana",
+    "section": "Links",
+    "text": "Links\n\nStatFest 2026 event page — https://events.humanitix.com/statfest\nLive site — https://saratmoka.github.io/combss-statfest/\nSource code — https://github.com/saratmoka/combss-statfest\n\n\n\nNext: Sparse GLM →"
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "CodeRs workshop: Scaling up with R and Katana",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nThe source code for this site came from Sarat Moka"
+  },
+  {
+    "objectID": "getting_started/login.html",
+    "href": "getting_started/login.html",
+    "title": "Logging in",
+    "section": "",
+    "text": "Accessing katana\n\nYou will need to get a little familiar with using a terminal.\nYou can access katana using SSH (Secure SHell) from your local machine.\n\n\n\nMac\nOpen up Terminal and SSH into katana:\n\n\n\nWindows\nFirst you will need to download a SSH client such as\n\n\n\nWelcome message\nIf you are successful you will see the following"
+  }
+]
