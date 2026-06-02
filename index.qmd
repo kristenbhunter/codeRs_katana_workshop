@@ -1,0 +1,57 @@
+---
+title: "CodeRs workshop: Scaling up with R and Katana"
+author: "[Kristen Hunter](https://web.maths.unsw.edu.au/~khunter/) (UNSW Sydney)"
+date: "4 June 2026"
+---
+
+
+## Abstract
+
+Best subset selection — identifying the optimal $k$ predictors from $p$ candidates — is fundamental for building interpretable and parsimonious statistical models, but the underlying combinatorial problem is NP-hard.
+
+**COMBSS** (Continuous Optimisation for Best Subset Selection) overcomes this barrier by reformulating the discrete problem as a continuous optimisation, making it scalable to high-dimensional settings where $p$ far exceeds $n$.
+
+This presentation walks through the framework for linear, logistic, and multinomial regression, illustrates its performance on simulated data and two real biomedical applications — cancer gene-expression classification ($p = 2{,}308$ genes) and a rice GWAS ($p \approx 158{,}000$ SNPs) — and demonstrates the open-source `combss` (R and Python) packages with practical examples.
+
+## Research collaborators
+
+| Name | Affiliation |
+|---|---|
+| **[Sarat Moka](https://saratmoka.com)** *(presenter)* | UNSW Sydney |
+| Zdravko Botev | UNSW Sydney |
+| Benoit Liquet | Université de Pau et des Pays de l'Adour & Macquarie University |
+| Anant Mathur | UNSW Sydney |
+| Samuel Muller | Macquarie University |
+| Houying Zhu | Macquarie University |
+
+## How this demonstration is structured
+
+Each section below has its own page; navigate via the top menu or click through in order.
+
+| Section | Pages |
+|---|---|
+| **Motivation** — what sparse-constrained GLM is, and why MIO / lasso are not the last word | [Sparse GLM](motivation/01-sparse-glm.qmd){target="_blank"} → [MIO](motivation/02-mio.qmd){target="_blank"} → [Lasso](motivation/03-lasso.qmd){target="_blank"} → [COMBSS (our method)](motivation/04-combss.qmd){target="_blank"} |
+| **Methodology** — Boolean relaxation and the homotopy Frank-Wolfe algorithm | [Relaxation](methodology/01-relaxation.qmd){target="_blank"} → [Homotopy Frank-Wolfe](methodology/02-frank-wolfe.qmd){target="_blank"} |
+| **Demos** — five runnable demos in R and Python | [Linear sim](demos/01-simulation.qmd){target="_blank"} · [HD logistic](demos/02-simulation-hd.qmd){target="_blank"} · [Khan SRBCT](demos/03-khan.qmd){target="_blank"} · [Rice GWAS](demos/04-rice.qmd){target="_blank"} · [Comparisons](demos/05-comparisons.qmd){target="_blank"} |
+| **Use it yourself** | [Install](install.qmd){target="_blank"} · [References](references.qmd){target="_blank"} |
+
+## Packages
+
+- **R** — [combss on CRAN](https://cran.r-project.org/web/packages/combss/index.html){target="_blank"} — `install.packages("combss")`
+- **Python** — [combss on PyPI](https://pypi.org/project/combss/){target="_blank"} — `pip install combss`
+
+## Links
+
+- **StatFest 2026 event page** — <https://events.humanitix.com/statfest>
+- **Live site** — <https://saratmoka.github.io/combss-statfest/>
+- **Source code** — <https://github.com/saratmoka/combss-statfest>
+
+::: {.page-nav}
+<span class="nav-spacer"></span>
+
+[Next: Sparse GLM →](motivation/01-sparse-glm.qmd)
+:::
+
+## Acknowledgements
+
+The source code for this site came from [Sarat Moka](https://github.com/saratmoka/combss-statfest)

@@ -1,0 +1,28 @@
+---
+title: "Shell commands"
+---
+
+## Shell commands
+
+If you haven't used a shell before to access a computer, it can be intimidating!  But knowing just a few commands can get you very far.
+
+Also known as bash, unix, or linux commands.
+
+## Navigate
+
+- `cd`: change directory
+- `ls`: list 
+- `pwd`: print working directory
+
+## File management
+
+- `mkdir`: make a directory
+- `rmdir`: remove a directory
+- `cp`: copy files
+- `mv`: move files
+- `rm`: remove files
+
+## Recursion
+
+- Adding `-r` makes the command recursive, which means it will apply to all files in a directory, not just one at a time.
+- Make sure you know what you are doing! `rm -r` deletes a whole directory!

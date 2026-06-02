@@ -1,0 +1,26 @@
+---
+title: "Logging in"
+---
+
+### Accessing katana
+
+- You will need to get a little familiar with using a terminal.
+- You can access katana using SSH (Secure SHell) from your local machine.
+
+### Mac
+
+Open up Terminal and SSH into katana:
+
+![](../screenshots/terminal_login.png)
+
+### Windows
+
+First you will need to download a SSH client such as
+
+![](../screenshots/putty.png)
+
+### Welcome message
+
+If you are successful you will see the following
+
+![](../screenshots/katana_welcome.png)
