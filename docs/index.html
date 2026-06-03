@@ -96,8 +96,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -129,8 +127,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Logging in</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./getting_starged/commands.qmd" rel="" target="">
+    <a class="dropdown-item" href="./getting_started/commands.html" rel="" target="">
  <span class="dropdown-text">Shell commands</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./getting_started/transfer.html" rel="" target="">
+ <span class="dropdown-text">Transferring files</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-running-r" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Running R</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-running-r">    
+        <li>
+    <a class="dropdown-item" href="./running_r/interactive.html" rel="" target="">
+ <span class="dropdown-text">Interactive R session</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./running_r/job.html" rel="" target="">
+ <span class="dropdown-text">Running a job</span></a>
   </li>  
     </ul>
   </li>
@@ -157,10 +174,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
-  <li><a href="#research-collaborators" id="toc-research-collaborators" class="nav-link" data-scroll-target="#research-collaborators">Research collaborators</a></li>
-  <li><a href="#how-this-demonstration-is-structured" id="toc-how-this-demonstration-is-structured" class="nav-link" data-scroll-target="#how-this-demonstration-is-structured">How this demonstration is structured</a></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#while-we-get-settled-in" id="toc-while-we-get-settled-in" class="nav-link active" data-scroll-target="#while-we-get-settled-in">While we get settled in</a></li>
+  <li><a href="#workshop-scope" id="toc-workshop-scope" class="nav-link" data-scroll-target="#workshop-scope">Workshop scope</a></li>
   <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
   <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
   </ul>
@@ -198,96 +213,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="abstract" class="level2">
-<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>Best subset selection — identifying the optimal <span class="math inline">\(k\)</span> predictors from <span class="math inline">\(p\)</span> candidates — is fundamental for building interpretable and parsimonious statistical models, but the underlying combinatorial problem is NP-hard.</p>
-<p><strong>COMBSS</strong> (Continuous Optimisation for Best Subset Selection) overcomes this barrier by reformulating the discrete problem as a continuous optimisation, making it scalable to high-dimensional settings where <span class="math inline">\(p\)</span> far exceeds <span class="math inline">\(n\)</span>.</p>
-<p>This presentation walks through the framework for linear, logistic, and multinomial regression, illustrates its performance on simulated data and two real biomedical applications — cancer gene-expression classification (<span class="math inline">\(p = 2{,}308\)</span> genes) and a rice GWAS (<span class="math inline">\(p \approx 158{,}000\)</span> SNPs) — and demonstrates the open-source <code>combss</code> (R and Python) packages with practical examples.</p>
-</section>
-<section id="research-collaborators" class="level2">
-<h2 class="anchored" data-anchor-id="research-collaborators">Research collaborators</h2>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Affiliation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong><a href="https://saratmoka.com">Sarat Moka</a></strong> <em>(presenter)</em></td>
-<td>UNSW Sydney</td>
-</tr>
-<tr class="even">
-<td>Zdravko Botev</td>
-<td>UNSW Sydney</td>
-</tr>
-<tr class="odd">
-<td>Benoit Liquet</td>
-<td>Université de Pau et des Pays de l’Adour &amp; Macquarie University</td>
-</tr>
-<tr class="even">
-<td>Anant Mathur</td>
-<td>UNSW Sydney</td>
-</tr>
-<tr class="odd">
-<td>Samuel Muller</td>
-<td>Macquarie University</td>
-</tr>
-<tr class="even">
-<td>Houying Zhu</td>
-<td>Macquarie University</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="how-this-demonstration-is-structured" class="level2">
-<h2 class="anchored" data-anchor-id="how-this-demonstration-is-structured">How this demonstration is structured</h2>
-<p>Each section below has its own page; navigate via the top menu or click through in order.</p>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Section</th>
-<th>Pages</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Motivation</strong> — what sparse-constrained GLM is, and why MIO / lasso are not the last word</td>
-<td><a href="motivation/01-sparse-glm.qmd" target="_blank">Sparse GLM</a> → <a href="motivation/02-mio.qmd" target="_blank">MIO</a> → <a href="motivation/03-lasso.qmd" target="_blank">Lasso</a> → <a href="motivation/04-combss.qmd" target="_blank">COMBSS (our method)</a></td>
-</tr>
-<tr class="even">
-<td><strong>Methodology</strong> — Boolean relaxation and the homotopy Frank-Wolfe algorithm</td>
-<td><a href="methodology/01-relaxation.qmd" target="_blank">Relaxation</a> → <a href="methodology/02-frank-wolfe.qmd" target="_blank">Homotopy Frank-Wolfe</a></td>
-</tr>
-<tr class="odd">
-<td><strong>Demos</strong> — five runnable demos in R and Python</td>
-<td><a href="demos/01-simulation.qmd" target="_blank">Linear sim</a> · <a href="demos/02-simulation-hd.qmd" target="_blank">HD logistic</a> · <a href="demos/03-khan.qmd" target="_blank">Khan SRBCT</a> · <a href="demos/04-rice.qmd" target="_blank">Rice GWAS</a> · <a href="demos/05-comparisons.qmd" target="_blank">Comparisons</a></td>
-</tr>
-<tr class="even">
-<td><strong>Use it yourself</strong></td>
-<td><a href="install.qmd" target="_blank">Install</a> · <a href="references.qmd" target="_blank">References</a></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="packages" class="level2">
-<h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<section id="while-we-get-settled-in" class="level2">
+<h2 class="anchored" data-anchor-id="while-we-get-settled-in">While we get settled in</h2>
 <ul>
-<li><strong>R</strong> — <a href="https://cran.r-project.org/web/packages/combss/index.html" target="_blank">combss on CRAN</a> — <code>install.packages("combss")</code></li>
-<li><strong>Python</strong> — <a href="https://pypi.org/project/combss/" target="_blank">combss on PyPI</a> — <code>pip install combss</code></li>
+<li>Access the GitHub repo for this workshop.
+<ul>
+<li><a href="https://github.com/kristenbhunter/codeRs_katana_workshop">https://github.com/kristenbhunter/codeRs_katana_workshop</a></li>
+</ul></li>
+<li>Check that you can log in to Katana.
+<ul>
+<li><a href="https://docs.restech.unsw.edu.au/using_katana/accessing_katana/">https://docs.restech.unsw.edu.au/using_katana/accessing_katana/</a></li>
+</ul></li>
+<li>Download FileZilla.
+<ul>
+<li><a href="https://filezilla-project.org/">https://filezilla-project.org/</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="workshop-scope" class="level2">
+<h2 class="anchored" data-anchor-id="workshop-scope">Workshop scope</h2>
+<ul>
+<li>I will spend very little time on understanding R code itself, and assume you already have beginner/intermediate R knowledge.</li>
+<li>I assume you have little or no experience with Katana.</li>
+<li>This workshop is for beginners to Katana, and brings you from logging into Katana for the first time to running an R script.</li>
+<li>If there is enough interest we may offer a future workshop for more advanced users, including running large numbers of jobs and advanced job management.</li>
+<li>The beginning of this workshop overlaps a lot with non-R focused Katana materials. Toward the end we will get into more information specific to R only.</li>
 </ul>
 </section>
 <section id="links" class="level2">
 <h2 class="anchored" data-anchor-id="links">Links</h2>
 <ul>
-<li><strong>StatFest 2026 event page</strong> — <a href="https://events.humanitix.com/statfest" class="uri">https://events.humanitix.com/statfest</a></li>
-<li><strong>Live site</strong> — <a href="https://saratmoka.github.io/combss-statfest/" class="uri">https://saratmoka.github.io/combss-statfest/</a></li>
-<li><strong>Source code</strong> — <a href="https://github.com/saratmoka/combss-statfest" class="uri">https://github.com/saratmoka/combss-statfest</a></li>
+<li><strong>Katana User Documentation</strong>: <a href="https://docs.restech.unsw.edu.au/" class="uri">https://docs.restech.unsw.edu.au/</a></li>
 </ul>
 <div class="page-nav">
 <p><span class="nav-spacer"></span></p>
-<p><a href="motivation/01-sparse-glm.qmd">Next: Sparse GLM →</a></p>
+<p><a href="./getting_started/login.html">Next: Getting Started →</a></p>
 </div>
 </section>
 <section id="acknowledgements" class="level2">
@@ -590,57 +550,37 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "4 June 2026"</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Abstract</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Best subset selection — identifying the optimal $k$ predictors from $p$ candidates — is fundamental for building interpretable and parsimonious statistical models, but the underlying combinatorial problem is NP-hard.</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>**COMBSS** (Continuous Optimisation for Best Subset Selection) overcomes this barrier by reformulating the discrete problem as a continuous optimisation, making it scalable to high-dimensional settings where $p$ far exceeds $n$.</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>This presentation walks through the framework for linear, logistic, and multinomial regression, illustrates its performance on simulated data and two real biomedical applications — cancer gene-expression classification ($p = 2{,}308$ genes) and a rice GWAS ($p \approx 158{,}000$ SNPs) — and demonstrates the open-source <span class="in">`combss`</span> (R and Python) packages with practical examples.</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Research collaborators</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## While we get settled in</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Access the GitHub repo for this workshop.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">https://github.com/kristenbhunter/codeRs_katana_workshop</span><span class="co">](https://github.com/kristenbhunter/codeRs_katana_workshop)</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Check that you can log in to Katana.</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">https://docs.restech.unsw.edu.au/using_katana/accessing_katana/</span><span class="co">](https://docs.restech.unsw.edu.au/using_katana/accessing_katana/)</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Download FileZilla.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">https://filezilla-project.org/</span><span class="co">](https://filezilla-project.org/)</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Workshop scope</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>| Name | Affiliation |</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>|---|---|</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>| **[Sarat Moka](https://saratmoka.com)** *(presenter)* | UNSW Sydney |</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>| Zdravko Botev | UNSW Sydney |</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>| Benoit Liquet | Université de Pau et des Pays de l'Adour &amp; Macquarie University |</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>| Anant Mathur | UNSW Sydney |</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>| Samuel Muller | Macquarie University |</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>| Houying Zhu | Macquarie University |</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>I will spend very little time on understanding R code itself, and assume you already have beginner/intermediate R knowledge.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>I assume you have little or no experience with Katana.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>This workshop is for beginners to Katana, and brings you from logging into Katana for the first time to running an R script.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>If there is enough interest we may offer a future workshop for more advanced users, including running large numbers of jobs and advanced job management.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The beginning of this workshop overlaps a lot with non-R focused Katana materials. Toward the end we will get into more information specific to R only.</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Links</span></span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## How this demonstration is structured</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Katana User Documentation**: <span class="ot">&lt;https://docs.restech.unsw.edu.au/&gt;</span></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Each section below has its own page; navigate via the top menu or click through in order.</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>| Section | Pages |</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>|---|---|</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>| **Motivation** — what sparse-constrained GLM is, and why MIO / lasso are not the last word | <span class="co">[</span><span class="ot">Sparse GLM</span><span class="co">](motivation/01-sparse-glm.qmd)</span>{target="_blank"} → [MIO](motivation/02-mio.qmd){target="_blank"} → [Lasso](motivation/03-lasso.qmd){target="_blank"} → [COMBSS (our method)](motivation/04-combss.qmd){target="_blank"} |</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>| **Methodology** — Boolean relaxation and the homotopy Frank-Wolfe algorithm | <span class="co">[</span><span class="ot">Relaxation</span><span class="co">](methodology/01-relaxation.qmd)</span>{target="_blank"} → [Homotopy Frank-Wolfe](methodology/02-frank-wolfe.qmd){target="_blank"} |</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>| **Demos** — five runnable demos in R and Python | <span class="co">[</span><span class="ot">Linear sim</span><span class="co">](demos/01-simulation.qmd)</span>{target="_blank"} · [HD logistic](demos/02-simulation-hd.qmd){target="_blank"} · [Khan SRBCT](demos/03-khan.qmd){target="_blank"} · [Rice GWAS](demos/04-rice.qmd){target="_blank"} · [Comparisons](demos/05-comparisons.qmd){target="_blank"} |</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>| **Use it yourself** | <span class="co">[</span><span class="ot">Install</span><span class="co">](install.qmd)</span>{target="_blank"} · [References](references.qmd){target="_blank"} |</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## Packages</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**R** — <span class="co">[</span><span class="ot">combss on CRAN</span><span class="co">](https://cran.r-project.org/web/packages/combss/index.html)</span>{target="_blank"} — <span class="in">`install.packages("combss")`</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Python** — <span class="co">[</span><span class="ot">combss on PyPI</span><span class="co">](https://pypi.org/project/combss/)</span>{target="_blank"} — <span class="in">`pip install combss`</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="fu">## Links</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**StatFest 2026 event page** — <span class="ot">&lt;https://events.humanitix.com/statfest&gt;</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Live site** — <span class="ot">&lt;https://saratmoka.github.io/combss-statfest/&gt;</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Source code** — <span class="ot">&lt;https://github.com/saratmoka/combss-statfest&gt;</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>::: {.page-nav}</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;span</span> <span class="er">class</span><span class="ot">=</span><span class="st">"nav-spacer"</span><span class="kw">&gt;&lt;/span&gt;</span></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Next: Sparse GLM →</span><span class="co">](motivation/01-sparse-glm.qmd)</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="fu">## Acknowledgements</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>The source code for this site came from <span class="co">[</span><span class="ot">Sarat Moka</span><span class="co">](https://github.com/saratmoka/combss-statfest)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>::: {.page-nav}</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;span</span> <span class="er">class</span><span class="ot">=</span><span class="st">"nav-spacer"</span><span class="kw">&gt;&lt;/span&gt;</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Next: Getting Started →</span><span class="co">](getting_started/login.qmd)</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## Acknowledgements</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>The source code for this site came from <span class="co">[</span><span class="ot">Sarat Moka</span><span class="co">](https://github.com/saratmoka/combss-statfest)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

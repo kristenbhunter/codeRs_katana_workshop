@@ -13,7 +13,35 @@ title: "Transferring files"
   - No need to remember if the file on katana is the latest version!
 
 
-## Transfer a file
+## Create a file on your local machine
 
-- Create a script, or download from the github repo scripts/test_script.R
+- Create an R script called test_script.R, or download from the github repo scripts/test_script.R
 - Your script should print something out.
+
+## Set up a folder on katana
+
+In your terminal, run:
+
+- `mkdir coders`
+- `cd coders`
+
+## Set up FileZilla
+
+### Important menu icons
+
+![](../screenshots/filezilla_menu1.png)
+
+![](../screenshots/filezilla_menu2.png)
+
+### Setting up your connection to katana
+
+![](../screenshots/filezilla_sitemanager.png)
+
+## Transfer your file
+
+Transfer to your new coders directory.
+
+![](../screenshots/filezilla_transfer.png)
+
+
+

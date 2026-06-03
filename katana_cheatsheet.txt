@@ -1,0 +1,43 @@
+
+#############
+# LOGIN
+#############
+ssh z000000@katana.restech.unsw.edu.au
+
+#############
+# RUN A BATCH JOB
+#############
+qsub run.pbs
+
+# a fancier version!
+qsub -V -koed -o /home/z0000000/coders/log -e /home/z0000000/coders/log /home/z0000000/coders/run.pbs
+
+#############
+# CHECK IN ON JOB
+#############
+qstat -su z0000000
+
+#############
+# DELETE JOB
+#############
+qdel 00000
+
+#############
+# SCRATCH
+#############
+/srv/scratch/z0000000
+
+#############
+# HOME
+#############
+/home/z0000000
+
+#############
+# LOAD R
+#############
+module load r/4.5.1
+
+#############
+# DELETE MULTIPLE JOBS
+#############
+qdel {000..001}

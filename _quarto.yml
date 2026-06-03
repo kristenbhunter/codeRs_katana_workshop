@@ -13,8 +13,16 @@ website:
         menu:
           - href: getting_started/login.qmd
             text: "Logging in"
-          - href: getting_starged/commands.qmd
+          - href: getting_started/commands.qmd
             text: "Shell commands"
+          - href: getting_started/transfer.qmd
+            text: "Transferring files"
+      - text: Running R
+        menu:
+          - href: running_r/interactive.qmd
+            text: "Interactive R session"
+          - href: running_r/job.qmd
+            text: "Running a job"
     right:
       - icon: github
         href: https://github.com/kristenbhunter/codeRs_katana_workshop

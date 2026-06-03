@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "CodeRs workshop: Scaling up with R and Katana",
     "section": "",
-    "text": "Best subset selection — identifying the optimal \\(k\\) predictors from \\(p\\) candidates — is fundamental for building interpretable and parsimonious statistical models, but the underlying combinatorial problem is NP-hard.\nCOMBSS (Continuous Optimisation for Best Subset Selection) overcomes this barrier by reformulating the discrete problem as a continuous optimisation, making it scalable to high-dimensional settings where \\(p\\) far exceeds \\(n\\).\nThis presentation walks through the framework for linear, logistic, and multinomial regression, illustrates its performance on simulated data and two real biomedical applications — cancer gene-expression classification (\\(p = 2{,}308\\) genes) and a rice GWAS (\\(p \\approx 158{,}000\\) SNPs) — and demonstrates the open-source combss (R and Python) packages with practical examples."
+    "text": "Access the GitHub repo for this workshop.\n\nhttps://github.com/kristenbhunter/codeRs_katana_workshop\n\nCheck that you can log in to Katana.\n\nhttps://docs.restech.unsw.edu.au/using_katana/accessing_katana/\n\nDownload FileZilla.\n\nhttps://filezilla-project.org/"
   },
   {
     "objectID": "index.html#abstract",
@@ -39,7 +39,7 @@
     "href": "index.html#links",
     "title": "CodeRs workshop: Scaling up with R and Katana",
     "section": "Links",
-    "text": "Links\n\nStatFest 2026 event page — https://events.humanitix.com/statfest\nLive site — https://saratmoka.github.io/combss-statfest/\nSource code — https://github.com/saratmoka/combss-statfest\n\n\n\nNext: Sparse GLM →"
+    "text": "Links\n\nKatana User Documentation: https://docs.restech.unsw.edu.au/\n\n\n\nNext: Getting Started →"
   },
   {
     "objectID": "index.html#acknowledgements",
@@ -53,21 +53,21 @@
     "href": "getting_started/login.html",
     "title": "Logging in",
     "section": "",
-    "text": "Accessing katana\n\nYou will need to get a little familiar with using a terminal.\nYou can access katana using SSH (Secure SHell) from your local machine.\n\n\n\nMac\nOpen up Terminal and SSH into katana:\n\n\n\nWindows\nFirst you will need to download a SSH client such as\n\n\n\nWelcome message\nIf you are successful you will see the following"
+    "text": "Accessing katana\n\nI will only be discussing accessing katana via terminal.\nYou can also access through Katana OnDeman, a graphical session where you can access Rstudio\nTo access via terminal, use SSH (Secure SHell) from your local machine.\n\n\n\nMac\nOpen up Terminal and SSH into katana:\n\n\n\nWindows\nFirst you will need to download a SSH client such as\n\n\n\nWelcome message\nIf you are successful you will see the following"
   },
   {
     "objectID": "getting_started/commands.html",
     "href": "getting_started/commands.html",
     "title": "Shell commands",
     "section": "",
-    "text": "If you haven’t used a shell before to access a computer, it can be intimidating! But knowing just a few commands can get you very far.\nAlso known as bash, unix, or linux commands."
+    "text": "If you haven’t used a shell before to access a computer, it can be intimidating! But knowing just a few commands can get you quite far.\nAlso known as bash, unix, or linux commands."
   },
   {
     "objectID": "getting_started/commands.html#shell-commands",
     "href": "getting_started/commands.html#shell-commands",
     "title": "Shell commands",
     "section": "",
-    "text": "If you haven’t used a shell before to access a computer, it can be intimidating! But knowing just a few commands can get you very far.\nAlso known as bash, unix, or linux commands."
+    "text": "If you haven’t used a shell before to access a computer, it can be intimidating! But knowing just a few commands can get you quite far.\nAlso known as bash, unix, or linux commands."
   },
   {
     "objectID": "getting_started/commands.html#navigate",
@@ -89,5 +89,138 @@
     "title": "Shell commands",
     "section": "Recursion",
     "text": "Recursion\n\nAdding -r makes the command recursive, which means it will apply to all files in a directory, not just one at a time.\nMake sure you know what you are doing! rm -r deletes a whole directory!"
+  },
+  {
+    "objectID": "getting_started/transfer.html",
+    "href": "getting_started/transfer.html",
+    "title": "Transferring files",
+    "section": "",
+    "text": "Option 1: Use a file transfer program\n\nThis option is probably best for most people.\nKatana recommends FileZilla.\n\nOption 2: Use git\n\nRequires command-line knowledge of git.\nEnsures consistency of file versions across machines.\nNo need to remember if the file on katana is the latest version!"
+  },
+  {
+    "objectID": "getting_started/transfer.html#options-for-transferring-files",
+    "href": "getting_started/transfer.html#options-for-transferring-files",
+    "title": "Transferring files",
+    "section": "",
+    "text": "Option 1: Use a file transfer program\n\nThis option is probably best for most people.\nKatana recommends FileZilla.\n\nOption 2: Use git\n\nRequires command-line knowledge of git.\nEnsures consistency of file versions across machines.\nNo need to remember if the file on katana is the latest version!"
+  },
+  {
+    "objectID": "getting_started/transfer.html#create-a-file",
+    "href": "getting_started/transfer.html#create-a-file",
+    "title": "Transferring files",
+    "section": "Create a file",
+    "text": "Create a file\n\nCreate an R script, or download from the github repo scripts/test_script.R\nYour script should print something out."
+  },
+  {
+    "objectID": "getting_started/transfer.html#set-up-filezilla",
+    "href": "getting_started/transfer.html#set-up-filezilla",
+    "title": "Transferring files",
+    "section": "Set up FileZilla",
+    "text": "Set up FileZilla\n\nImportant menu icons\n\n\n\n\nSetting up your connection to katana"
+  },
+  {
+    "objectID": "running_r/job.html",
+    "href": "running_r/job.html",
+    "title": "Running a job",
+    "section": "",
+    "text": "Katana uses a job management system called OpenPBS. A job is a computational test, such as running an R script. You use PBS to run jobs, stop jobs, and check on their status."
+  },
+  {
+    "objectID": "running_r/job.html#job-management",
+    "href": "running_r/job.html#job-management",
+    "title": "Running a job",
+    "section": "",
+    "text": "Katana uses a job management system called OpenPBS. A job is a computational test, such as running an R script. You use PBS to run jobs, stop jobs, and check on their status."
+  },
+  {
+    "objectID": "running_r/job.html#set-up-your-pbs-script",
+    "href": "running_r/job.html#set-up-your-pbs-script",
+    "title": "Running a job",
+    "section": "Set up your pbs script",
+    "text": "Set up your pbs script\nThe following is a basic pbs script, scripts/run.pbs.\n#!/bin/bash\n\n#PBS -N coders\n#PBS -l select=1:ncpus=1:mem=4gb\n#PBS -l walltime=1:00:00\n#PBS -M email@unsw.edu.au\n#PBS -m abe\n\nmodule load r/4.5.1\n\nRscript /home/z0000000/test_script.R\nTasks\n\nOpen scripts/run.pbs in Rstudio.\nChange the email address to your personal email address.\nChange the Rscript directory to your zID.\nTransfer this script to your coders directory on katana using FileZilla."
+  },
+  {
+    "objectID": "running_r/job.html#start-a-job",
+    "href": "running_r/job.html#start-a-job",
+    "title": "Running a job",
+    "section": "Start a job",
+    "text": "Start a job\nRun the following:\nqsub run.pbs\nThe following should happen:\n\nThe terminal prints out the job id 0000.kman.restech.unsw.edu.au\nOnce the job starts (might take a couple of minutes):\n\nYou should receive an email that the job has started.\nType ls and you will see two files:\n\ncoders.e8181993: messages and errors.\ncoders.o8181993: output, like print statements.\nThese will continue to get updated as the job runs.\nTry running cat on both these files to see their contents."
+  },
+  {
+    "objectID": "running_r/job.html#job-management-1",
+    "href": "running_r/job.html#job-management-1",
+    "title": "Running a job",
+    "section": "Job management",
+    "text": "Job management\n\nJob status\nTo check on all your jobs, run:\nqstat -su z0000000\nwhere the number is your zID.\nThis will only show currently-running jobs–as soon as the job completes, it will not show up!\n\n\nDelete a job\nTo stop a job, run:\nqdel 00000\nwhere the number is the job ID."
+  },
+  {
+    "objectID": "running_r/job.html#advanced-commands",
+    "href": "running_r/job.html#advanced-commands",
+    "title": "Running a job",
+    "section": "Advanced commands",
+    "text": "Advanced commands\nWant to explore what options there are for running jobs? Type\nman qsub\nto show you the manual. Press q to quit\nAll of these flags can included in one of two ways:\n\nWhen you run the job qsub -N coders\nAt the top of the .pbs script #PBS -N coders\nNote: -N adds a job name."
+  },
+  {
+    "objectID": "getting_started/commands.html#seeing-and-editing-files",
+    "href": "getting_started/commands.html#seeing-and-editing-files",
+    "title": "Shell commands",
+    "section": "Seeing and editing files",
+    "text": "Seeing and editing files\n\ncat prints out the contents of a file.\nnano is a simple text editor that allows you to edit files on the terminal. There are other options, but I find this is the most user-friendly because it has instructions at the bottom. Running nano filename will start the nano editor."
+  },
+  {
+    "objectID": "index.html#while-we-get-settled-in",
+    "href": "index.html#while-we-get-settled-in",
+    "title": "CodeRs workshop: Scaling up with R and Katana",
+    "section": "",
+    "text": "Access the GitHub repo for this workshop.\n\nhttps://github.com/kristenbhunter/codeRs_katana_workshop\n\nCheck that you can log in to Katana.\n\nhttps://docs.restech.unsw.edu.au/using_katana/accessing_katana/\n\nDownload FileZilla.\n\nhttps://filezilla-project.org/"
+  },
+  {
+    "objectID": "index.html#workshop-scope",
+    "href": "index.html#workshop-scope",
+    "title": "CodeRs workshop: Scaling up with R and Katana",
+    "section": "Workshop scope",
+    "text": "Workshop scope\n\nI will spend very little time on understanding R code itself, and assume you already have beginner/intermediate R knowledge.\nI assume you have little or no experience with Katana.\nThis workshop is for beginners to Katana, and brings you from logging into Katana for the first time to running an R script.\nIf there is enough interest we may offer a future workshop for more advanced users, including running large numbers of jobs and advanced job management.\nThe beginning of this workshop overlaps a lot with non-R focused Katana materials. Toward the end we will get into more information specific to R only."
+  },
+  {
+    "objectID": "running_r/interactive.html",
+    "href": "running_r/interactive.html",
+    "title": "Interactive R session",
+    "section": "",
+    "text": "Run module avail to see the extensive list of software pre-installed on katana.\nThe following R versions are available"
+  },
+  {
+    "objectID": "running_r/interactive.html#list-available-software",
+    "href": "running_r/interactive.html#list-available-software",
+    "title": "Interactive R session",
+    "section": "",
+    "text": "Run module avail to see the extensive list of software pre-installed on katana.\nThe following R versions are available"
+  },
+  {
+    "objectID": "running_r/interactive.html#run-interactive-r",
+    "href": "running_r/interactive.html#run-interactive-r",
+    "title": "Interactive R session",
+    "section": "Run interactive R",
+    "text": "Run interactive R\nRun the following commands:\n\nmodule load r/4.5.1\nR\n\nNow you are running R interactively!\n\nRun install.packages(\"palmerpenguins\")\nQuit by typing q()\nDo not save workspace image.\n\nNotes on using interactive R:\n\nI rarely use this feature!\nHelps me test whether a script will run, mostly to see if files are in the right place and libraries are installed.\nI also use this to install the necessary R libraries before running jobs, so I don’t need to re-install every time."
+  },
+  {
+    "objectID": "getting_started/transfer.html#create-a-file-on-your-local-machine",
+    "href": "getting_started/transfer.html#create-a-file-on-your-local-machine",
+    "title": "Transferring files",
+    "section": "Create a file on your local machine",
+    "text": "Create a file on your local machine\n\nCreate an R script called test_script.R, or download from the github repo scripts/test_script.R\nYour script should print something out."
+  },
+  {
+    "objectID": "getting_started/transfer.html#set-up-a-folder-on-katana",
+    "href": "getting_started/transfer.html#set-up-a-folder-on-katana",
+    "title": "Transferring files",
+    "section": "Set up a folder on katana",
+    "text": "Set up a folder on katana\nIn your terminal, run:\n\nmkdir coders\ncd coders"
+  },
+  {
+    "objectID": "getting_started/transfer.html#transfer-your-file",
+    "href": "getting_started/transfer.html#transfer-your-file",
+    "title": "Transferring files",
+    "section": "Transfer your file",
+    "text": "Transfer your file\nTransfer to your new coders directory."
   }
 ]

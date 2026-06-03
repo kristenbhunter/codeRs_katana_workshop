@@ -6,24 +6,25 @@ date: "4 June 2026"
 
 ## While we get settled in
 
-- (Optional) Access the GitHub repo for this workshop
+- Access the GitHub repo for this workshop.
   - [https://github.com/kristenbhunter/codeRs_katana_workshop](https://github.com/kristenbhunter/codeRs_katana_workshop)
-- Check that you can log in to Katana
+- Check that you can log in to Katana.
   - [https://docs.restech.unsw.edu.au/using_katana/accessing_katana/](https://docs.restech.unsw.edu.au/using_katana/accessing_katana/)
-- Download FileZilla
+- Download FileZilla.
   - [https://filezilla-project.org/](https://filezilla-project.org/)
   
 ## Workshop scope
 
 - I will spend very little time on understanding R code itself, and assume you already have beginner/intermediate R knowledge.
 - I assume you have little or no experience with Katana.
-- This workshops is for beginners to Katana, brings you from logging into Katana for the first time to running an R script.
+- This workshop is for beginners to Katana, and brings you from logging into Katana for the first time to running an R script.
 - If there is enough interest we may offer a future workshop for more advanced users, including running large numbers of jobs and advanced job management.
+- The beginning of this workshop overlaps a lot with non-R focused Katana materials. Toward the end we will get into more information specific to R only.
 
 
 ## Links
 
-- **Katana User Documentation** — <https://docs.restech.unsw.edu.au/>
+- **Katana User Documentation**: <https://docs.restech.unsw.edu.au/>
 
 ::: {.page-nav}
 <span class="nav-spacer"></span>

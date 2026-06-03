@@ -125,8 +125,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Logging in</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../getting_starged/commands.qmd" rel="" target="">
+    <a class="dropdown-item" href="../getting_started/commands.html" rel="" target="">
  <span class="dropdown-text">Shell commands</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../getting_started/transfer.html" rel="" target="">
+ <span class="dropdown-text">Transferring files</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-running-r" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Running R</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-running-r">    
+        <li>
+    <a class="dropdown-item" href="../running_r/interactive.html" rel="" target="">
+ <span class="dropdown-text">Interactive R session</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../running_r/job.html" rel="" target="">
+ <span class="dropdown-text">Running a job</span></a>
   </li>  
     </ul>
   </li>
@@ -183,8 +202,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="accessing-katana" class="level3">
 <h3 class="anchored" data-anchor-id="accessing-katana">Accessing katana</h3>
 <ul>
-<li>You will need to get a little familiar with using a terminal.</li>
-<li>You can access katana using SSH (Secure SHell) from your local machine.</li>
+<li>I will only be discussing accessing katana via terminal.</li>
+<li>You can also access through <a href="https://docs.restech.unsw.edu.au/using_katana/accessing_katana/">Katana OnDeman</a>, a graphical session where you can access Rstudio</li>
+<li>To access via terminal, use SSH (Secure SHell) from your local machine.</li>
 </ul>
 </section>
 <section id="mac" class="level3">
@@ -498,26 +518,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">### Accessing katana</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>You will need to get a little familiar with using a terminal.</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>You can access katana using SSH (Secure SHell) from your local machine.</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">### Mac</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>I will only be discussing accessing katana via terminal.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>You can also access through <span class="co">[</span><span class="ot">Katana OnDeman</span><span class="co">](https://docs.restech.unsw.edu.au/using_katana/accessing_katana/)</span>, a graphical session where you can access Rstudio </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>To access via terminal, use SSH (Secure SHell) from your local machine.</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>Open up Terminal and SSH into katana:</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">### Mac</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="al">![](../screenshots/terminal_login.png)</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Open up Terminal and SSH into katana:</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">### Windows</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="al">![](../screenshots/terminal_login.png)</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>First you will need to download a SSH client such as</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">### Windows</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="al">![](../screenshots/putty.png)</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>First you will need to download a SSH client such as</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">### Welcome message</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="al">![](../screenshots/putty.png)</span></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>If you are successful you will see the following</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">### Welcome message</span></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="al">![](../screenshots/katana_welcome.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>If you are successful you will see the following</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="al">![](../screenshots/katana_welcome.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

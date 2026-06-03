@@ -1,0 +1,89 @@
+---
+title: "Running a job"
+---
+
+## Job management
+
+Katana uses a job management system called OpenPBS. A job is a computational test, such as running an R script. You use PBS to run jobs, stop jobs, and check on their status.
+
+## Set up your pbs script
+
+The following is a basic pbs script, scripts/run.pbs.
+
+```
+#!/bin/bash
+
+#PBS -N coders
+#PBS -l select=1:ncpus=1:mem=4gb
+#PBS -l walltime=1:00:00
+#PBS -M email@unsw.edu.au
+#PBS -m abe
+
+module load r/4.5.1
+
+Rscript /home/z0000000/test_script.R
+```
+
+Tasks
+
+- Open scripts/run.pbs in Rstudio.
+- Change the email address to your personal email address.
+- Change the Rscript directory to your zID.
+- Transfer this script to your coders directory on katana using FileZilla.
+
+
+## Start a job
+
+Run the following:
+
+```
+qsub run.pbs
+```
+
+The following should happen:
+
+- The terminal prints out the job id `0000.kman.restech.unsw.edu.au`
+- Once the job starts (might take a couple of minutes):
+  - You should receive an email that the job has started.
+  - Type `ls` and you will see two files:
+    - `coders.e8181993`: messages and errors.
+    - `coders.o8181993`: output, like print statements.
+    - These will continue to get updated as the job runs.
+    - Try running `cat` on both these files to see their contents.
+  
+
+## Job management
+
+### Job status
+
+To check on all your jobs, run:
+
+`qstat -su z0000000`
+
+where the number is your zID.
+
+This will only show currently-running jobs--as soon as the job completes, it will not show up!
+
+### Delete a job
+
+To stop a job, run:
+
+`qdel 00000`
+
+where the number is the job ID.
+
+## Advanced commands
+
+Want to explore what options there are for running jobs? Type
+
+```
+man qsub
+```
+
+to show you the manual. Press `q` to quit
+
+All of these flags can included in one of two ways:
+
+- When you run the job `qsub -N coders`
+- At the top of the .pbs script `#PBS -N coders`
+- Note: `-N` adds a job name.

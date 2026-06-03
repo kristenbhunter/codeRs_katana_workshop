@@ -4,7 +4,7 @@ title: "Shell commands"
 
 ## Shell commands
 
-If you haven't used a shell before to access a computer, it can be intimidating!  But knowing just a few commands can get you very far.
+If you haven't used a shell before to access a computer, it can be intimidating!  But knowing just a few commands can get you quite far.
 
 Also known as bash, unix, or linux commands.
 
@@ -26,3 +26,8 @@ Also known as bash, unix, or linux commands.
 
 - Adding `-r` makes the command recursive, which means it will apply to all files in a directory, not just one at a time.
 - Make sure you know what you are doing! `rm -r` deletes a whole directory!
+
+## Seeing and editing files
+
+- `cat` prints out the contents of a file.
+- `nano` is a simple text editor that allows you to edit files on the terminal. There are other options, but I find this is the most user-friendly because it has instructions at the bottom. Running `nano filename` will start the nano editor.
