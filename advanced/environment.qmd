@@ -1,0 +1,95 @@
+---
+title: "Passing values"
+---
+
+## Setup
+
+We are going to run a slightly more complicated script that creates a plot and saves it to a png file.
+
+### Preparation
+
+Modify the following scripts with your personal details/file paths:
+
+- scripts/create_plot1.R
+- scripts/create_plot2.R
+- scripts/run_colour.pbs
+
+Next:
+
+- Transfer all the above files to your Katana coders directory.
+- Modify run.pbs to run create_plot1.R instead of test_script.R
+  - You can modify it on your local machine and transfer it.
+  - Or, you can use nano (or your preferred text editor) in the terminal to edit it directly on Katana.
+  
+## Run the script
+
+- Run `qsub run.pbs`
+- Once the job has run, run `ls` to see if `plot.png` has appeared.
+- Transfer `plot.png` back to your local machine to see if it worked.
+
+The current plot has the points coloured in UNSW yellow.  We are going to try to pass in a different colour from the terminal into our R script.
+
+## Passing in a value to the R script
+
+### Setting the environment variable
+
+Let's take a look at `run_colour.pbs`
+
+```
+#!/bin/bash
+
+#PBS -N coders
+#PBS -l select=1:ncpus=1:mem=4gb
+#PBS -l walltime=1:00:00
+#PBS -M email@unsw.edu.au
+#PBS -m abe
+
+module load r/4.5.1
+
+colour="#2a9d8f"
+export colour
+
+Rscript /home/z0000000/coders/create_plot2.R
+```
+
+What is going on here?
+
+```
+colour="#2a9d8f"
+export colour
+```
+
+- We set an environment variable called "colour".
+- We export the variable. This makes sure the variable is accessible to processes outside of the bash script we are running.
+
+
+Try running the above two commands just in your terminal.  Then run the following to see the value of "colour":
+
+```
+echo $colour
+```
+
+### Pulling in the value to the R script
+
+Now let's take a look at `create_plot2.R`.
+
+The following line extracts the "colour" variable from the environment variables.
+
+```
+point.colour <- Sys.getenv("colour")
+```
+
+## Check that it works!
+
+- Pick a new colour for the points on the graph and find the hex code for it.
+  - [HTML Color Picker](https://www.w3schools.com/colors/colors_picker.asp)
+- Modify run_colour.pbs with your hex code.
+- Run the job.
+- After the job finishes, transfer plot.png back to your machine.
+- Did it work?
+
+::: {.page-nav}
+<span class="nav-spacer"></span>
+
+[Next: Loops →](loops.qmd)
+:::

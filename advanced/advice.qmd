@@ -1,0 +1,56 @@
+---
+title: "A collection of miscellaneous advice"
+---
+
+## Directory setup
+
+Regardless of whether you are conducting a project locally or on Katana, I always like to create two directories:
+
+- `in`: contains any input data. I never write to this directory!
+- `out`: contains any output from jobs, such as RDS files, images, etc. 
+
+## Log files
+
+I find it very annoying that all the output and error files clutter up my project directory.
+
+I like to create a folder called log and set the following options at the top of my PBS file:
+
+```
+#PBS -o log/
+#PBS -e log/
+```
+
+This sends the output and error files to the log directory.
+
+## Paths
+
+### here package
+
+It is annoying to re-set paths when you switch back and forth between your local machine and the cloud. Something that helps is using the "here" package. It helps set paths relative to "here".
+
+```{r}
+here::here()
+```
+
+```{r}
+here::here("out", "pval.RDS")
+```
+
+### Toggle variable
+
+Alternatively, sometimes I set a clunky option: I have a single variable called `local` which sets a bunch of variable values depending on whether I am on my local machine or in the cloud.
+
+```
+local <- TRUE
+if(local)
+{
+  # local
+  codedir <- here::here()
+  outdirbase <- here::here()
+} else
+{
+  # cloud
+  codedir <- Sys.getenv("codedir")
+  outdirbase <- Sys.getenv("outdirbase")
+}
+```

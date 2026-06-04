@@ -1,10 +1,13 @@
-/* COMBSS @ StatFest — site styles */
+/* CodeRs — site styles */
 
 :root {
-  --combss-teal:       #2a9d8f;
-  --combss-teal-dark:  #1f7a70;
+  --combss-teal:       #0093d8;
+  --combss-teal-dark:  #0093d8;
   --combss-teal-soft:  #e6f4f1;
-  --combss-ink:        #0b3a35;
+  --combss-ink:        #0093d8;
+  --unsw-yellow:       #FFE600;
+  --black:             #000000;
+  --light-gray:        #F7F7F7;
 }
 
 /* Base font size — bumped from Bootstrap default (16px) for talk projection */
@@ -15,13 +18,14 @@ body {
 
 /* Navbar — teal bar with ink-coloured text (matches headings) */
 .navbar {
-  border-bottom: 3px solid var(--combss-teal-dark);
+  background-color: var(--unsw-yellow);
+  border-bottom: 3px solid var(--black);
 }
 .navbar .navbar-brand,
 .navbar .nav-link,
 .navbar .dropdown-toggle,
 .navbar .navbar-toggler {
-  color: var(--combss-ink) !important;
+  color: var(--black) !important;
 }
 .navbar .navbar-brand {
   font-weight: 600;
@@ -35,13 +39,13 @@ body {
 /* Tint the right-side icons (GitHub, search) to match */
 .navbar .navbar-nav .nav-link .bi,
 .navbar .quarto-navigation-tool .bi {
-  color: var(--combss-ink);
+  color: var(--black);
 }
 
 /* Dropdowns inherit the teal accent */
 .dropdown-menu .dropdown-item:hover,
 .dropdown-menu .dropdown-item:focus {
-  background-color: var(--combss-teal-dark);
+  background-color: var(--light-gray);
   color: var(--combss-ink);
 }
 
@@ -104,6 +108,12 @@ table th, table td {
 /* Inline code accent */
 code {
   color: var(--combss-teal-dark);
+}
+
+/* block code */
+pre {
+  color: var(--combss-teal-dark);
+  background: var(--light-gray);
 }
 
 /* Venn diagram container — centre and cap width */

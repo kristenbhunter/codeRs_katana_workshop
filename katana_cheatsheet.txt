@@ -13,9 +13,14 @@ qsub run.pbs
 qsub -V -koed -o /home/z0000000/coders/log -e /home/z0000000/coders/log /home/z0000000/coders/run.pbs
 
 #############
-# CHECK IN ON JOB
+# CHECK JOB
 #############
 qstat -su z0000000
+
+#############
+# ALTER JOB
+#############
+qalter -l select=1:ncpus=4:mem=128gb 000000
 
 #############
 # DELETE JOB

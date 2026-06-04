@@ -1,0 +1,50 @@
+---
+title: "Loops"
+---
+
+## Setup
+
+We are going to run a simulation. It simulates data, conducts a t test, and saves the p-value. We want to pass several different values into this simulation in a loop.
+
+### Preparation
+
+Modify the following scripts with your personal details/file paths:
+
+- scripts/simulation.R
+- scripts/run_sim.pbs
+
+And transfer them to Katana.
+
+## Run a loop
+
+Paste the following into your terminal. It is also available in `scripts/loop.txt`.
+
+```
+nList=("10" "50" "100")
+
+for i in ${nList[@]}; do
+    
+  # assign vars
+  n=$i
+  echo $n
+
+  # Run R script
+  qsub -v n=$n run_sim.pbs
+
+  # pause to be kind to the scheduler and to get unique run IDs
+  sleep 10
+
+done
+```
+
+What is the purpose of `-v n=$n` for in `qsub -V run_sim.pbs`? This is essential! It passes $n so it is available to the job.
+
+### Check the results
+
+Do you have a 3 files called `pval_20260406_00000.RDS` in your directory? If yes, it worked!
+
+::: {.page-nav}
+<span class="nav-spacer"></span>
+
+[Next: Misc Advice →](advice.qmd)
+:::

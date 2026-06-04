@@ -11,14 +11,17 @@ title: "Transferring files"
   - Requires command-line knowledge of git.
   - Ensures consistency of file versions across machines.
   - No need to remember if the file on katana is the latest version!
+  - I will not cover this option, but feel free to ask me about it.
+  
+## Let's transfer a file!
 
 
-## Create a file on your local machine
+### Create a file on your local machine
 
 - Create an R script called test_script.R, or download from the github repo scripts/test_script.R
 - Your script should print something out.
 
-## Set up a folder on katana
+### Set up a folder on katana
 
 In your terminal, run:
 
@@ -42,6 +45,13 @@ In your terminal, run:
 Transfer to your new coders directory.
 
 ![](../screenshots/filezilla_transfer.png)
+
+::: {.page-nav}
+<span class="nav-spacer"></span>
+
+[Next: Interactive R session →](../running_r/interactive.qmd)
+:::
+
 
 
 

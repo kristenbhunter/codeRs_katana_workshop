@@ -23,6 +23,12 @@ website:
             text: "Interactive R session"
           - href: running_r/job.qmd
             text: "Running a job"
+      - text: Advanced
+        menu:
+          - href: advanced/environment.qmd
+            text: "Passing values"
+          - href: advanced/loops.qmd
+            text: "Loops"
     right:
       - icon: github
         href: https://github.com/kristenbhunter/codeRs_katana_workshop

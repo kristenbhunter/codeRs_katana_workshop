@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#PBS -N coders
+#PBS -l select=1:ncpus=1:mem=4gb
+#PBS -l walltime=1:00:00
+#PBS -M email@unsw.edu.au
+#PBS -m abe
+
+export n
+
+module load r/4.5.1
+
+Rscript /home/z0000000/coders/simulation.R

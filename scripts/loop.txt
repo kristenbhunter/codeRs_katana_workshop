@@ -1,0 +1,15 @@
+nList=("10" "50" "100")
+
+for i in ${nList[@]}; do
+    
+  # assign vars
+  n=$i
+  echo $n
+
+  # Run R script
+  qsub -v n=$n run_sim.pbs
+
+  # pause to be kind to the scheduler and to get unique run IDs
+  sleep 10
+
+done

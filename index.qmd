@@ -4,27 +4,47 @@ author: "[Kristen Hunter](https://web.maths.unsw.edu.au/~khunter/) (UNSW Sydney)
 date: "4 June 2026"
 ---
 
-## While we get settled in
+# While we get settled in
 
-- Access the GitHub repo for this workshop.
+1. Access the GitHub repo for this workshop.
   - [https://github.com/kristenbhunter/codeRs_katana_workshop](https://github.com/kristenbhunter/codeRs_katana_workshop)
-- Check that you can log in to Katana.
-  - [https://docs.restech.unsw.edu.au/using_katana/accessing_katana/](https://docs.restech.unsw.edu.au/using_katana/accessing_katana/)
-- Download FileZilla.
+2. Windows users: Download putty.
+  - [https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
+2. Download FileZilla.
   - [https://filezilla-project.org/](https://filezilla-project.org/)
-  
-## Workshop scope
+3. Bonus: Check if you can log in to Katana.
+  - We will also do this during the workshop!
+  - [https://docs.restech.unsw.edu.au/using_katana/accessing_katana/](https://docs.restech.unsw.edu.au/using_katana/accessing_katana/)
+
+# Workshop scope
 
 - I will spend very little time on understanding R code itself, and assume you already have beginner/intermediate R knowledge.
 - I assume you have little or no experience with Katana.
-- This workshop is for beginners to Katana, and brings you from logging into Katana for the first time to running an R script.
-- If there is enough interest we may offer a future workshop for more advanced users, including running large numbers of jobs and advanced job management.
-- The beginning of this workshop overlaps a lot with non-R focused Katana materials. Toward the end we will get into more information specific to R only.
+- If there is enough interest we may offer a future workshop for more advanced users, including running large numbers of jobs and advanced job management. Let me know!
+- The beginning of this workshop overlaps a lot with general, non-R focused Katana materials. Toward the end we will get into some information that is more specific to R users.
 
+# Announcements
+
+## Future workshops
+
+We plan to host a few more workshops this year. Would you like to see an advanced Katana workshop?  Have another topic session? Do you want to host a workshop? Contact us!
+
+**Email**: coders@unsw.edu.au
+
+## Sign up for the codeRs mentorship program!
+
+This is a 10-week, flexible program, allowing the mentee and mentor to decide how regularly they would like to catch-up. If you are interested in being a mentee, please use this form to express your interest. You can sign up to be a mentor, mentee, or both!
+
+[https://unsw-coders.netlify.app/mentoring-program.html](https://unsw-coders.netlify.app/mentoring-program.html)
 
 ## Links
 
 - **Katana User Documentation**: <https://docs.restech.unsw.edu.au/>
+- **CodeRs website**: <https://unsw-coders.netlify.app/>
+
+## Acknowledgements
+
+The source code for this site came from [Sarat Moka](https://github.com/saratmoka/combss-statfest)
 
 ::: {.page-nav}
 <span class="nav-spacer"></span>
@@ -32,6 +52,3 @@ date: "4 June 2026"
 [Next: Getting Started →](getting_started/login.qmd)
 :::
 
-## Acknowledgements
-
-The source code for this site came from [Sarat Moka](https://github.com/saratmoka/combss-statfest)

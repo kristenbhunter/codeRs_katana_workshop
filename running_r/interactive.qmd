@@ -4,11 +4,11 @@ title: "Interactive R session"
 
 ## List available software
 
-Run `module avail` to see the extensive list of software pre-installed on katana.
+Run `module avail` to see the extensive list of software pre-installed on Katana.
 
 The following R versions are available
 
-![](../screenshots/rversions.png)
+![](../screenshots/rversions.png){width=1.5in}
 
 ## Run interactive R
 
@@ -17,14 +17,22 @@ Run the following commands:
 - `module load r/4.5.1`
 - `R`
 
-Now you are running R interactively!
+Now you are running R interactively! Within R, run:
 
 - Run `install.packages("palmerpenguins")`
+- Run `install.packages("ggplot2")`
 - Quit by typing `q()`
 - Do not save workspace image.
 
 Notes on using interactive R:
 
 - I rarely use this feature!
-- Helps me test whether a script will run, mostly to see if files are in the right place and libraries are installed.
-- I also use this to install the necessary R libraries before running jobs, so I don't need to re-install every time.
+- Before running R, you have to run `module load` every time you log into Katana. You only have to run it once per session.
+- I use it help me test whether a script will run, mostly to see if files are in the right place and libraries are installed.
+- I also use this to install the necessary R libraries before running jobs, so I don't need to re-install packages every time I run a script.
+
+::: {.page-nav}
+<span class="nav-spacer"></span>
+
+[Next: Running a job →](job.qmd)
+:::

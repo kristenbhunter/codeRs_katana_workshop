@@ -1,0 +1,16 @@
+{
+  "hash": "14c3638c7f9bec7433433d5c946f2497",
+  "result": {
+    "markdown": "---\ntitle: \"A collection of miscellaneous advice\"\n---\n\n\n## Directory setup\n\nRegardless of whether you are conducting a project locally or on Katana, I always like to create two directories:\n\n- `in`: contains any input data. I never write to this directory!\n- `out`: contains any output from jobs, such as RDS files, images, etc. \n\n## Log files\n\nI find it very annoying that all the output and error files clutter up my project directory.\n\nI like to create a folder called log and set the following options at the top of my PBS file:\n\n```\n#PBS -o log/\n#PBS -e log/\n```\n\nThis sends the output and error files to the log directory.\n\n## Paths\n\n### here package\n\nIt is annoying to re-set paths when you switch back and forth between your local machine and the cloud. Something that helps is using the \"here\" package. It helps set paths relative to \"here\".\n\n\n::: {.cell}\n\n```{.r .cell-code}\nhere::here()\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"/Users/z3535929/Library/CloudStorage/OneDrive-UNSW/kemps/codeRs_katana_workshop\"\n```\n:::\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nhere::here(\"out\", \"pval.RDS\")\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"/Users/z3535929/Library/CloudStorage/OneDrive-UNSW/kemps/codeRs_katana_workshop/out/pval.RDS\"\n```\n:::\n:::\n\n\n### Toggle variable\n\nAlternatively, sometimes I set a clunky option: I have a single variable called `local` which sets a bunch of variable values depending on whether I am on my local machine or in the cloud.\n\n```\nlocal <- TRUE\nif(local)\n{\n  # local\n  codedir <- here::here()\n  outdirbase <- here::here()\n} else\n{\n  # cloud\n  codedir <- Sys.getenv(\"codedir\")\n  outdirbase <- Sys.getenv(\"outdirbase\")\n}\n```\n",
+    "supporting": [
+      "advice_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

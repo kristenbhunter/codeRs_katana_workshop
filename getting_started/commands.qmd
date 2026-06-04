@@ -8,13 +8,15 @@ If you haven't used a shell before to access a computer, it can be intimidating!
 
 Also known as bash, unix, or linux commands.
 
-## Navigate
+## Useful commands cheatsheet
+
+### Navigate
 
 - `cd`: change directory
 - `ls`: list 
 - `pwd`: print working directory
 
-## File management
+### File management
 
 - `mkdir`: make a directory
 - `rmdir`: remove a directory
@@ -22,12 +24,19 @@ Also known as bash, unix, or linux commands.
 - `mv`: move files
 - `rm`: remove files
 
-## Recursion
+### Recursion
 
 - Adding `-r` makes the command recursive, which means it will apply to all files in a directory, not just one at a time.
 - Make sure you know what you are doing! `rm -r` deletes a whole directory!
 
-## Seeing and editing files
+### Seeing and editing files
 
 - `cat` prints out the contents of a file.
 - `nano` is a simple text editor that allows you to edit files on the terminal. There are other options, but I find this is the most user-friendly because it has instructions at the bottom. Running `nano filename` will start the nano editor.
+
+::: {.page-nav}
+<span class="nav-spacer"></span>
+
+[Next: Transferring files →](transfer.qmd)
+:::
+

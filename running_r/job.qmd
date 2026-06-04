@@ -4,7 +4,7 @@ title: "Running a job"
 
 ## Job management
 
-Katana uses a job management system called OpenPBS. A job is a computational test, such as running an R script. You use PBS to run jobs, stop jobs, and check on their status.
+Katana uses a job management system called OpenPBS (PBS = portable batch system). A job is a computational task, such as running an R script. You use PBS to run jobs, stop jobs, and check on their status.
 
 ## Set up your pbs script
 
@@ -24,7 +24,7 @@ module load r/4.5.1
 Rscript /home/z0000000/test_script.R
 ```
 
-Tasks
+### Tasks
 
 - Open scripts/run.pbs in Rstudio.
 - Change the email address to your personal email address.
@@ -87,3 +87,15 @@ All of these flags can included in one of two ways:
 - When you run the job `qsub -N coders`
 - At the top of the .pbs script `#PBS -N coders`
 - Note: `-N` adds a job name.
+
+## Katana cheatsheet
+
+I keep a file with common katana commands I use in my project folder on my local machine.  I've included mine for you to download and modify as "katana_cheatsheet.txt".
+
+
+::: {.page-nav}
+<span class="nav-spacer"></span>
+
+[Next: Passing values →](advanced/environment.qmd)
+:::
+

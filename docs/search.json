@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "CodeRs workshop: Scaling up with R and Katana",
     "section": "",
-    "text": "Access the GitHub repo for this workshop.\n\nhttps://github.com/kristenbhunter/codeRs_katana_workshop\n\nCheck that you can log in to Katana.\n\nhttps://docs.restech.unsw.edu.au/using_katana/accessing_katana/\n\nDownload FileZilla.\n\nhttps://filezilla-project.org/"
+    "text": "Access the GitHub repo for this workshop.\n\n\nhttps://github.com/kristenbhunter/codeRs_katana_workshop\n\n\nWindows users: Download putty.\n\n\nhttps://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html\n\n\nDownload FileZilla.\n\n\nhttps://filezilla-project.org/\n\n\nBonus: Check if you can log in to Katana.\n\n\nWe will also do this during the workshop!\nhttps://docs.restech.unsw.edu.au/using_katana/accessing_katana/"
   },
   {
     "objectID": "index.html#abstract",
@@ -39,21 +39,21 @@
     "href": "index.html#links",
     "title": "CodeRs workshop: Scaling up with R and Katana",
     "section": "Links",
-    "text": "Links\n\nKatana User Documentation: https://docs.restech.unsw.edu.au/\n\n\n\nNext: Getting Started →"
+    "text": "Links\n\nKatana User Documentation: https://docs.restech.unsw.edu.au/\nCodeRs website: https://unsw-coders.netlify.app/"
   },
   {
     "objectID": "index.html#acknowledgements",
     "href": "index.html#acknowledgements",
     "title": "CodeRs workshop: Scaling up with R and Katana",
     "section": "Acknowledgements",
-    "text": "Acknowledgements\nThe source code for this site came from Sarat Moka"
+    "text": "Acknowledgements\nThe source code for this site came from Sarat Moka\n\n\nNext: Getting Started →"
   },
   {
     "objectID": "getting_started/login.html",
     "href": "getting_started/login.html",
     "title": "Logging in",
     "section": "",
-    "text": "Accessing katana\n\nI will only be discussing accessing katana via terminal.\nYou can also access through Katana OnDeman, a graphical session where you can access Rstudio\nTo access via terminal, use SSH (Secure SHell) from your local machine.\n\n\n\nMac\nOpen up Terminal and SSH into katana:\n\n\n\nWindows\nFirst you will need to download a SSH client such as\n\n\n\nWelcome message\nIf you are successful you will see the following"
+    "text": "I will only be discussing accessing katana via terminal.\nYou can also access through Katana OnDemand, a graphical session where you can access Rstudio\nTo access Katana via terminal, we will use SSH (Secure SHell) from your local machine.\n\n\n\nOpen up Terminal and SSH into katana:\n\n\n\n\nFirst you will need to download a SSH client such as Putty."
   },
   {
     "objectID": "getting_started/commands.html",
@@ -95,14 +95,14 @@
     "href": "getting_started/transfer.html",
     "title": "Transferring files",
     "section": "",
-    "text": "Option 1: Use a file transfer program\n\nThis option is probably best for most people.\nKatana recommends FileZilla.\n\nOption 2: Use git\n\nRequires command-line knowledge of git.\nEnsures consistency of file versions across machines.\nNo need to remember if the file on katana is the latest version!"
+    "text": "Option 1: Use a file transfer program\n\nThis option is probably best for most people.\nKatana recommends FileZilla.\n\nOption 2: Use git\n\nRequires command-line knowledge of git.\nEnsures consistency of file versions across machines.\nNo need to remember if the file on katana is the latest version!\nI will not cover this option, but feel free to ask me about it."
   },
   {
     "objectID": "getting_started/transfer.html#options-for-transferring-files",
     "href": "getting_started/transfer.html#options-for-transferring-files",
     "title": "Transferring files",
     "section": "",
-    "text": "Option 1: Use a file transfer program\n\nThis option is probably best for most people.\nKatana recommends FileZilla.\n\nOption 2: Use git\n\nRequires command-line knowledge of git.\nEnsures consistency of file versions across machines.\nNo need to remember if the file on katana is the latest version!"
+    "text": "Option 1: Use a file transfer program\n\nThis option is probably best for most people.\nKatana recommends FileZilla.\n\nOption 2: Use git\n\nRequires command-line knowledge of git.\nEnsures consistency of file versions across machines.\nNo need to remember if the file on katana is the latest version!\nI will not cover this option, but feel free to ask me about it."
   },
   {
     "objectID": "getting_started/transfer.html#create-a-file",
@@ -123,21 +123,21 @@
     "href": "running_r/job.html",
     "title": "Running a job",
     "section": "",
-    "text": "Katana uses a job management system called OpenPBS. A job is a computational test, such as running an R script. You use PBS to run jobs, stop jobs, and check on their status."
+    "text": "Katana uses a job management system called OpenPBS (PBS = portable batch system). A job is a computational task, such as running an R script. You use PBS to run jobs, stop jobs, and check on their status."
   },
   {
     "objectID": "running_r/job.html#job-management",
     "href": "running_r/job.html#job-management",
     "title": "Running a job",
     "section": "",
-    "text": "Katana uses a job management system called OpenPBS. A job is a computational test, such as running an R script. You use PBS to run jobs, stop jobs, and check on their status."
+    "text": "Katana uses a job management system called OpenPBS (PBS = portable batch system). A job is a computational task, such as running an R script. You use PBS to run jobs, stop jobs, and check on their status."
   },
   {
     "objectID": "running_r/job.html#set-up-your-pbs-script",
     "href": "running_r/job.html#set-up-your-pbs-script",
     "title": "Running a job",
     "section": "Set up your pbs script",
-    "text": "Set up your pbs script\nThe following is a basic pbs script, scripts/run.pbs.\n#!/bin/bash\n\n#PBS -N coders\n#PBS -l select=1:ncpus=1:mem=4gb\n#PBS -l walltime=1:00:00\n#PBS -M email@unsw.edu.au\n#PBS -m abe\n\nmodule load r/4.5.1\n\nRscript /home/z0000000/test_script.R\nTasks\n\nOpen scripts/run.pbs in Rstudio.\nChange the email address to your personal email address.\nChange the Rscript directory to your zID.\nTransfer this script to your coders directory on katana using FileZilla."
+    "text": "Set up your pbs script\nThe following is a basic pbs script, scripts/run.pbs.\n#!/bin/bash\n\n#PBS -N coders\n#PBS -l select=1:ncpus=1:mem=4gb\n#PBS -l walltime=1:00:00\n#PBS -M email@unsw.edu.au\n#PBS -m abe\n\nmodule load r/4.5.1\n\nRscript /home/z0000000/test_script.R\n\nTasks\n\nOpen scripts/run.pbs in Rstudio.\nChange the email address to your personal email address.\nChange the Rscript directory to your zID.\nTransfer this script to your coders directory on katana using FileZilla."
   },
   {
     "objectID": "running_r/job.html#start-a-job",
@@ -172,35 +172,35 @@
     "href": "index.html#while-we-get-settled-in",
     "title": "CodeRs workshop: Scaling up with R and Katana",
     "section": "",
-    "text": "Access the GitHub repo for this workshop.\n\nhttps://github.com/kristenbhunter/codeRs_katana_workshop\n\nCheck that you can log in to Katana.\n\nhttps://docs.restech.unsw.edu.au/using_katana/accessing_katana/\n\nDownload FileZilla.\n\nhttps://filezilla-project.org/"
+    "text": "Access the GitHub repo for this workshop.\n\n\nhttps://github.com/kristenbhunter/codeRs_katana_workshop\n\n\nWindows users: Download putty.\n\n\nhttps://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html\n\n\nDownload FileZilla.\n\n\nhttps://filezilla-project.org/\n\n\nBonus: Check if you can log in to Katana.\n\n\nWe will also do this during the workshop!\nhttps://docs.restech.unsw.edu.au/using_katana/accessing_katana/"
   },
   {
     "objectID": "index.html#workshop-scope",
     "href": "index.html#workshop-scope",
     "title": "CodeRs workshop: Scaling up with R and Katana",
-    "section": "Workshop scope",
-    "text": "Workshop scope\n\nI will spend very little time on understanding R code itself, and assume you already have beginner/intermediate R knowledge.\nI assume you have little or no experience with Katana.\nThis workshop is for beginners to Katana, and brings you from logging into Katana for the first time to running an R script.\nIf there is enough interest we may offer a future workshop for more advanced users, including running large numbers of jobs and advanced job management.\nThe beginning of this workshop overlaps a lot with non-R focused Katana materials. Toward the end we will get into more information specific to R only."
+    "section": "",
+    "text": "I will spend very little time on understanding R code itself, and assume you already have beginner/intermediate R knowledge.\nI assume you have little or no experience with Katana.\nIf there is enough interest we may offer a future workshop for more advanced users, including running large numbers of jobs and advanced job management. Let me know!\nThe beginning of this workshop overlaps a lot with general, non-R focused Katana materials. Toward the end we will get into some information that is more specific to R users."
   },
   {
     "objectID": "running_r/interactive.html",
     "href": "running_r/interactive.html",
     "title": "Interactive R session",
     "section": "",
-    "text": "Run module avail to see the extensive list of software pre-installed on katana.\nThe following R versions are available"
+    "text": "Run module avail to see the extensive list of software pre-installed on Katana.\nThe following R versions are available"
   },
   {
     "objectID": "running_r/interactive.html#list-available-software",
     "href": "running_r/interactive.html#list-available-software",
     "title": "Interactive R session",
     "section": "",
-    "text": "Run module avail to see the extensive list of software pre-installed on katana.\nThe following R versions are available"
+    "text": "Run module avail to see the extensive list of software pre-installed on Katana.\nThe following R versions are available"
   },
   {
     "objectID": "running_r/interactive.html#run-interactive-r",
     "href": "running_r/interactive.html#run-interactive-r",
     "title": "Interactive R session",
     "section": "Run interactive R",
-    "text": "Run interactive R\nRun the following commands:\n\nmodule load r/4.5.1\nR\n\nNow you are running R interactively!\n\nRun install.packages(\"palmerpenguins\")\nQuit by typing q()\nDo not save workspace image.\n\nNotes on using interactive R:\n\nI rarely use this feature!\nHelps me test whether a script will run, mostly to see if files are in the right place and libraries are installed.\nI also use this to install the necessary R libraries before running jobs, so I don’t need to re-install every time."
+    "text": "Run interactive R\nRun the following commands:\n\nmodule load r/4.5.1\nR\n\nNow you are running R interactively! Within R, run:\n\nRun install.packages(\"palmerpenguins\")\nRun install.packages(\"ggplot2\")\nQuit by typing q()\nDo not save workspace image.\n\nNotes on using interactive R:\n\nI rarely use this feature!\nBefore running R, you have to run module load every time you log into Katana. You only have to run it once per session.\nI use it help me test whether a script will run, mostly to see if files are in the right place and libraries are installed.\nI also use this to install the necessary R libraries before running jobs, so I don’t need to re-install packages every time I run a script.\n\n\n\nNext: Running a job →"
   },
   {
     "objectID": "getting_started/transfer.html#create-a-file-on-your-local-machine",
@@ -221,6 +221,195 @@
     "href": "getting_started/transfer.html#transfer-your-file",
     "title": "Transferring files",
     "section": "Transfer your file",
-    "text": "Transfer your file\nTransfer to your new coders directory."
+    "text": "Transfer your file\nTransfer to your new coders directory.\n\n\n\nNext: Interactive R session →"
+  },
+  {
+    "objectID": "running_r/environment.html",
+    "href": "running_r/environment.html",
+    "title": "Passing values",
+    "section": "",
+    "text": "We are going to run a slightly more complicated script that creates a plot and saves it to a png file.\n\n\nModify the following scripts with your personal details/file paths:\n\nscripts/create_plot1.R\nscripts/create_plot2.R\nscripts/run_colour.pbs\n\nNext:\n\nTransfer all the above files to your Katana coders directory.\nModify run.pbs to run create_plot1.R instead of test_script.R\n\nYou can modify it on your local machine and transfer it.\nOr, you can use nano (or your preferred text editor) in the terminal to edit it directly on Katana."
+  },
+  {
+    "objectID": "running_r/environment.html#setup",
+    "href": "running_r/environment.html#setup",
+    "title": "Passing values",
+    "section": "",
+    "text": "We are going to run a slightly more complicated script that creates a plot and saves it to a png file.\n\n\nModify the following scripts with your personal details/file paths:\n\nscripts/create_plot1.R\nscripts/create_plot2.R\nscripts/run_colour.pbs\n\nNext:\n\nTransfer all the above files to your Katana coders directory.\nModify run.pbs to run create_plot1.R instead of test_script.R\n\nYou can modify it on your local machine and transfer it.\nOr, you can use nano (or your preferred text editor) in the terminal to edit it directly on Katana."
+  },
+  {
+    "objectID": "getting_started/login.html#accessing-katana",
+    "href": "getting_started/login.html#accessing-katana",
+    "title": "Logging in",
+    "section": "",
+    "text": "I will only be discussing accessing katana via terminal.\nYou can also access through Katana OnDemand, a graphical session where you can access Rstudio\nTo access Katana via terminal, we will use SSH (Secure SHell) from your local machine.\n\n\n\nOpen up Terminal and SSH into katana:\n\n\n\n\nFirst you will need to download a SSH client such as Putty."
+  },
+  {
+    "objectID": "getting_started/login.html#welcome-message",
+    "href": "getting_started/login.html#welcome-message",
+    "title": "Logging in",
+    "section": "Welcome message",
+    "text": "Welcome message\nIf you are successful you will see the following\n\n\n\nNext: Shell commands →"
+  },
+  {
+    "objectID": "getting_started/commands.html#useful-commands-cheatsheet",
+    "href": "getting_started/commands.html#useful-commands-cheatsheet",
+    "title": "Shell commands",
+    "section": "Useful commands cheatsheet",
+    "text": "Useful commands cheatsheet\n\nNavigate\n\ncd: change directory\nls: list\npwd: print working directory\n\n\n\nFile management\n\nmkdir: make a directory\nrmdir: remove a directory\ncp: copy files\nmv: move files\nrm: remove files\n\n\n\nRecursion\n\nAdding -r makes the command recursive, which means it will apply to all files in a directory, not just one at a time.\nMake sure you know what you are doing! rm -r deletes a whole directory!\n\n\n\nSeeing and editing files\n\ncat prints out the contents of a file.\nnano is a simple text editor that allows you to edit files on the terminal. There are other options, but I find this is the most user-friendly because it has instructions at the bottom. Running nano filename will start the nano editor.\n\n\n\nNext: Transferring files →"
+  },
+  {
+    "objectID": "running_r/environment.html#run-the-script",
+    "href": "running_r/environment.html#run-the-script",
+    "title": "Passing values",
+    "section": "Run the script",
+    "text": "Run the script\n\nRun qsub run.pbs\nOnce the job has run, run ls to see if plot.png has appeared.\nTransfer plot.png back to your local machine to see if it worked.\n\nThe current plot has the points coloured in UNSW yellow. We are going to try to pass in a different colour from the terminal into our R script."
+  },
+  {
+    "objectID": "running_r/environment.html#passing-in-a-value-to-the-r-script",
+    "href": "running_r/environment.html#passing-in-a-value-to-the-r-script",
+    "title": "Passing values",
+    "section": "Passing in a value to the R script",
+    "text": "Passing in a value to the R script\n\nSetting the environment variable\nLet’s take a look at run_colour.pbs\n#!/bin/bash\n\n#PBS -N coders\n#PBS -l select=1:ncpus=1:mem=4gb\n#PBS -l walltime=1:00:00\n#PBS -M email@unsw.edu.au\n#PBS -m abe\n\nmodule load r/4.5.1\n\ncolour=\"#2a9d8f\"\nexport colour\n\nRscript /home/z0000000/coders/create_plot2.R\nWhat is going on here?\ncolour=\"#2a9d8f\"\nexport colour\n\nWe set an environment variable called “colour”.\nWe export the variable. This makes sure the variable is accessible to processes outside of the bash script we are running.\n\nTry running the above two commands just in your terminal. Then run the following to see the value of “colour”:\necho $colour\n\n\nPulling in the value to the R script\nNow let’s take a look at create_plot2.R.\nThe following line extracts the “colour” variable from the environment variables.\npoint.colour &lt;- Sys.getenv(\"colour\")"
+  },
+  {
+    "objectID": "running_r/environment.html#check-that-it-works",
+    "href": "running_r/environment.html#check-that-it-works",
+    "title": "Passing values",
+    "section": "Check that it works!",
+    "text": "Check that it works!\n\nPick a new colour for the points on the graph and find the hex code for it.\n\nHTML Color Picker\n\nModify run_colour.pbs with your hex code.\nRun the job.\nAfter the job finishes, transfer plot.png back to your machine.\nDid it work?"
+  },
+  {
+    "objectID": "running_r/job.html#katana-cheatsheet",
+    "href": "running_r/job.html#katana-cheatsheet",
+    "title": "Running a job",
+    "section": "Katana cheatsheet",
+    "text": "Katana cheatsheet\nI keep a file with common katana commands I use in my project folder on my local machine. I’ve included mine for you to download and modify as “katana_cheatsheet.txt”.\n\n\nNext: Passing values →"
+  },
+  {
+    "objectID": "getting_started/transfer.html#lets-transfer-a-file",
+    "href": "getting_started/transfer.html#lets-transfer-a-file",
+    "title": "Transferring files",
+    "section": "Let’s transfer a file!",
+    "text": "Let’s transfer a file!\n\nCreate a file on your local machine\n\nCreate an R script called test_script.R, or download from the github repo scripts/test_script.R\nYour script should print something out.\n\n\n\nSet up a folder on katana\nIn your terminal, run:\n\nmkdir coders\ncd coders"
+  },
+  {
+    "objectID": "advanced/loops.html",
+    "href": "advanced/loops.html",
+    "title": "Loops",
+    "section": "",
+    "text": "We are going to run a simulation. It simulates data, conducts a t test, and saves the p-value. We want to pass several different values into this simulation in a loop.\n\n\nModify the following scripts with your personal details/file paths:\n\nscripts/simulation.R\nscripts/run_sim.pbs\n\nAnd transfer them to Katana."
+  },
+  {
+    "objectID": "advanced/loops.html#setup",
+    "href": "advanced/loops.html#setup",
+    "title": "Loops",
+    "section": "",
+    "text": "We are going to run a simulation. It simulates data, conducts a t test, and saves the p-value. We want to pass several different values into this simulation in a loop.\n\n\nModify the following scripts with your personal details/file paths:\n\nscripts/simulation.R\nscripts/run_sim.pbs\n\nAnd transfer them to Katana."
+  },
+  {
+    "objectID": "advanced/loops.html#run-a-loop",
+    "href": "advanced/loops.html#run-a-loop",
+    "title": "Loops",
+    "section": "Run a loop",
+    "text": "Run a loop\nPaste the following into your terminal. It is also available in scripts/loop.txt.\nnList=(\"10\" \"50\" \"100\")\n\nfor i in ${nList[@]}; do\n    \n  # assign vars\n  n=$i\n  echo $n\n\n  # Run R script\n  qsub -v n=$n run_sim.pbs\n\n  # pause to be kind to the scheduler and to get unique run IDs\n  sleep 10\n\ndone\nWhat is the purpose of -v n=$n for in qsub -V run_sim.pbs? This is essential! It passes $n so it is available to the job.\n\nCheck the results\nDo you have a 3 files called pval_20260406_00000.RDS in your directory? If yes, it worked!\n\n\nNext: Misc Advice →"
+  },
+  {
+    "objectID": "advanced/loops.html#run-the-script",
+    "href": "advanced/loops.html#run-the-script",
+    "title": "Loops",
+    "section": "Run the script",
+    "text": "Run the script\n\nRun qsub run.pbs\nOnce the job has run, run ls to see if plot.png has appeared.\nTransfer plot.png back to your local machine to see if it worked.\n\nThe current plot has the points coloured in UNSW yellow. We are going to try to pass in a different colour from the terminal into our R script."
+  },
+  {
+    "objectID": "advanced/loops.html#passing-in-a-value-to-the-r-script",
+    "href": "advanced/loops.html#passing-in-a-value-to-the-r-script",
+    "title": "Loops",
+    "section": "Passing in a value to the R script",
+    "text": "Passing in a value to the R script\n\nSetting the environment variable\nLet’s take a look at run_colour.pbs\n#!/bin/bash\n\n#PBS -N coders\n#PBS -l select=1:ncpus=1:mem=4gb\n#PBS -l walltime=1:00:00\n#PBS -M email@unsw.edu.au\n#PBS -m abe\n\nmodule load r/4.5.1\n\ncolour=\"#2a9d8f\"\nexport colour\n\nRscript /home/z0000000/coders/create_plot2.R\nWhat is going on here?\ncolour=\"#2a9d8f\"\nexport colour\n\nWe set an environment variable called “colour”.\nWe export the variable. This makes sure the variable is accessible to processes outside of the bash script we are running.\n\nTry running the above two commands just in your terminal. Then run the following to see the value of “colour”:\necho $colour\n\n\nPulling in the value to the R script\nNow let’s take a look at create_plot2.R.\nThe following line extracts the “colour” variable from the environment variables.\npoint.colour &lt;- Sys.getenv(\"colour\")"
+  },
+  {
+    "objectID": "advanced/loops.html#check-that-it-works",
+    "href": "advanced/loops.html#check-that-it-works",
+    "title": "Loops",
+    "section": "Check that it works!",
+    "text": "Check that it works!\n\nPick a new colour for the points on the graph and find the hex code for it.\n\nHTML Color Picker\n\nModify run_colour.pbs with your hex code.\nRun the job.\nAfter the job finishes, transfer plot.png back to your machine.\nDid it work?"
+  },
+  {
+    "objectID": "index.html#future-workshops",
+    "href": "index.html#future-workshops",
+    "title": "CodeRs workshop: Scaling up with R and Katana",
+    "section": "Future workshops",
+    "text": "Future workshops\nWe plan to host a few more workshops this year. Would you like to see an advanced Katana workshop? Have another topic session? Do you want to host a workshop? Contact us!\nEmail: coders@unsw.edu.au"
+  },
+  {
+    "objectID": "index.html#sign-up-for-the-coders-mentorship-program",
+    "href": "index.html#sign-up-for-the-coders-mentorship-program",
+    "title": "CodeRs workshop: Scaling up with R and Katana",
+    "section": "Sign up for the codeRs mentorship program!",
+    "text": "Sign up for the codeRs mentorship program!\nThis is a 10-week, flexible program, allowing the mentee and mentor to decide how regularly they would like to catch-up. If you are interested in being a mentee, please use this form to express your interest. You can sign up to be a mentor, mentee, or both!\nhttps://unsw-coders.netlify.app/mentoring-program.html"
+  },
+  {
+    "objectID": "advanced/environment.html",
+    "href": "advanced/environment.html",
+    "title": "Passing values",
+    "section": "",
+    "text": "We are going to run a slightly more complicated script that creates a plot and saves it to a png file.\n\n\nModify the following scripts with your personal details/file paths:\n\nscripts/create_plot1.R\nscripts/create_plot2.R\nscripts/run_colour.pbs\n\nNext:\n\nTransfer all the above files to your Katana coders directory.\nModify run.pbs to run create_plot1.R instead of test_script.R\n\nYou can modify it on your local machine and transfer it.\nOr, you can use nano (or your preferred text editor) in the terminal to edit it directly on Katana."
+  },
+  {
+    "objectID": "advanced/environment.html#setup",
+    "href": "advanced/environment.html#setup",
+    "title": "Passing values",
+    "section": "",
+    "text": "We are going to run a slightly more complicated script that creates a plot and saves it to a png file.\n\n\nModify the following scripts with your personal details/file paths:\n\nscripts/create_plot1.R\nscripts/create_plot2.R\nscripts/run_colour.pbs\n\nNext:\n\nTransfer all the above files to your Katana coders directory.\nModify run.pbs to run create_plot1.R instead of test_script.R\n\nYou can modify it on your local machine and transfer it.\nOr, you can use nano (or your preferred text editor) in the terminal to edit it directly on Katana."
+  },
+  {
+    "objectID": "advanced/environment.html#run-the-script",
+    "href": "advanced/environment.html#run-the-script",
+    "title": "Passing values",
+    "section": "Run the script",
+    "text": "Run the script\n\nRun qsub run.pbs\nOnce the job has run, run ls to see if plot.png has appeared.\nTransfer plot.png back to your local machine to see if it worked.\n\nThe current plot has the points coloured in UNSW yellow. We are going to try to pass in a different colour from the terminal into our R script."
+  },
+  {
+    "objectID": "advanced/environment.html#passing-in-a-value-to-the-r-script",
+    "href": "advanced/environment.html#passing-in-a-value-to-the-r-script",
+    "title": "Passing values",
+    "section": "Passing in a value to the R script",
+    "text": "Passing in a value to the R script\n\nSetting the environment variable\nLet’s take a look at run_colour.pbs\n#!/bin/bash\n\n#PBS -N coders\n#PBS -l select=1:ncpus=1:mem=4gb\n#PBS -l walltime=1:00:00\n#PBS -M email@unsw.edu.au\n#PBS -m abe\n\nmodule load r/4.5.1\n\ncolour=\"#2a9d8f\"\nexport colour\n\nRscript /home/z0000000/coders/create_plot2.R\nWhat is going on here?\ncolour=\"#2a9d8f\"\nexport colour\n\nWe set an environment variable called “colour”.\nWe export the variable. This makes sure the variable is accessible to processes outside of the bash script we are running.\n\nTry running the above two commands just in your terminal. Then run the following to see the value of “colour”:\necho $colour\n\n\nPulling in the value to the R script\nNow let’s take a look at create_plot2.R.\nThe following line extracts the “colour” variable from the environment variables.\npoint.colour &lt;- Sys.getenv(\"colour\")"
+  },
+  {
+    "objectID": "advanced/environment.html#check-that-it-works",
+    "href": "advanced/environment.html#check-that-it-works",
+    "title": "Passing values",
+    "section": "Check that it works!",
+    "text": "Check that it works!\n\nPick a new colour for the points on the graph and find the hex code for it.\n\nHTML Color Picker\n\nModify run_colour.pbs with your hex code.\nRun the job.\nAfter the job finishes, transfer plot.png back to your machine.\nDid it work?\n\n\n\nNext: Loops →"
+  },
+  {
+    "objectID": "advanced/advice.html",
+    "href": "advanced/advice.html",
+    "title": "A collection of miscellaneous advice",
+    "section": "",
+    "text": "Regardless of whether you are conducting a project locally or on Katana, I always like to create two directories:\n\nin: contains any input data. I never write to this directory!\nout: contains any output from jobs, such as RDS files, images, etc."
+  },
+  {
+    "objectID": "advanced/advice.html#directory-setup",
+    "href": "advanced/advice.html#directory-setup",
+    "title": "A collection of miscellaneous advice",
+    "section": "",
+    "text": "Regardless of whether you are conducting a project locally or on Katana, I always like to create two directories:\n\nin: contains any input data. I never write to this directory!\nout: contains any output from jobs, such as RDS files, images, etc."
+  },
+  {
+    "objectID": "advanced/advice.html#log-files",
+    "href": "advanced/advice.html#log-files",
+    "title": "A collection of miscellaneous advice",
+    "section": "Log files",
+    "text": "Log files\nI find it very annoying that all the output and error files clutter up my project directory.\nI like to create a folder called log and set the following options at the top of my PBS file:\n#PBS -o log/\n#PBS -e log/\nThis sends the output and error files to the log directory."
+  },
+  {
+    "objectID": "advanced/advice.html#paths",
+    "href": "advanced/advice.html#paths",
+    "title": "A collection of miscellaneous advice",
+    "section": "Paths",
+    "text": "Paths\n\nhere package\nIt is annoying to re-set paths when you switch back and forth between your local machine and the cloud. Something that helps is using the “here” package. It helps set paths relative to “here”.\n\nhere::here()\n\n[1] \"/Users/z3535929/Library/CloudStorage/OneDrive-UNSW/kemps/codeRs_katana_workshop\"\n\n\n\nhere::here(\"out\", \"pval.RDS\")\n\n[1] \"/Users/z3535929/Library/CloudStorage/OneDrive-UNSW/kemps/codeRs_katana_workshop/out/pval.RDS\"\n\n\n\n\nToggle variable\nAlternatively, sometimes I set a clunky option: I have a single variable called local which sets a bunch of variable values depending on whether I am on my local machine or in the cloud.\nlocal &lt;- TRUE\nif(local)\n{\n  # local\n  codedir &lt;- here::here()\n  outdirbase &lt;- here::here()\n} else\n{\n  # cloud\n  codedir &lt;- Sys.getenv(\"codedir\")\n  outdirbase &lt;- Sys.getenv(\"outdirbase\")\n}"
   }
 ]
