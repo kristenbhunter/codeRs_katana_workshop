@@ -2,6 +2,10 @@
 title: "A collection of miscellaneous advice"
 ---
 
+## Parallelisation
+
+You can parallelise by running one job with multi-cores (using `purrr`, `snow`, `foreach`, etc.), parallelise by running multiple jobs, or both!
+
 ## Directory setup
 
 Regardless of whether you are conducting a project locally or on Katana, I always like to create two directories:
@@ -54,3 +58,15 @@ if(local)
   outdirbase <- Sys.getenv("outdirbase")
 }
 ```
+
+
+## Resources
+
+- I try to be conservative with my memory usage.
+  - You can use Rstudio's built-in profiling tool to estimate memory usage on your local machine.
+- I am anti-conservative with walltime.
+  - The last thing you want is for a job to time out after a day of running when it was close to finishing!
+
+Profiling tool is in the top menu:
+
+![](../screenshots/profile.png){width=1.5in}

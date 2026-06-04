@@ -43,6 +43,24 @@ What is the purpose of `-v n=$n` for in `qsub -V run_sim.pbs`? This is essential
 
 Do you have a 3 files called `pval_20260406_00000.RDS` in your directory? If yes, it worked!
 
+## Using loops
+
+Other examples of where you can use loops:
+
+- Random seeds (`set.seed()`)
+- Starting values of an algorithm
+- Families in a GLM
+- Optimizers in an algorithm
+- Groups or subsets of data
+
+### Advice
+
+- Make sure you save your parameter somehow so you know which output corresponds to which loop value!
+- I like to create a new directory for each simulation run, something like `run_04062026_000000` with the following:
+  - `params.R`: all relevant parameters, in this case that would be n, mu, sd.
+  - All generated `.RDS` objects, such as model objects.
+  - All generated plots.
+
 ::: {.page-nav}
 <span class="nav-spacer"></span>
 
