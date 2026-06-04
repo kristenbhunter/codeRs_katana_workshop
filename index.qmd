@@ -40,7 +40,8 @@ This is a 10-week, flexible program, allowing the mentee and mentor to decide ho
 ## Links
 
 - **Katana User Documentation**: <https://docs.restech.unsw.edu.au/>
-- **CodeRs website**: <https://unsw-coders.netlify.app/>
+- **CodeRs website**: <https://unsw-coders.netlify.app/>]
+- **Source code**: <https://github.com/kristenbhunter/codeRs_katana_workshop>
 
 ## Acknowledgements
 
