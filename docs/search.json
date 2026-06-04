@@ -39,7 +39,7 @@
     "href": "index.html#links",
     "title": "CodeRs workshop: Scaling up with R and Katana",
     "section": "Links",
-    "text": "Links\n\nKatana User Documentation: https://docs.restech.unsw.edu.au/\nCodeRs website: https://unsw-coders.netlify.app/"
+    "text": "Links\n\nKatana User Documentation: https://docs.restech.unsw.edu.au/\nCodeRs website: https://unsw-coders.netlify.app/]\nSource code: https://github.com/kristenbhunter/codeRs_katana_workshop"
   },
   {
     "objectID": "index.html#acknowledgements",
@@ -389,14 +389,14 @@
     "href": "advanced/advice.html",
     "title": "A collection of miscellaneous advice",
     "section": "",
-    "text": "Regardless of whether you are conducting a project locally or on Katana, I always like to create two directories:\n\nin: contains any input data. I never write to this directory!\nout: contains any output from jobs, such as RDS files, images, etc."
+    "text": "You can parallelise by running one job with multi-cores (using purrr, snow, foreach, etc.), parallelise by running multiple jobs, or both!"
   },
   {
     "objectID": "advanced/advice.html#directory-setup",
     "href": "advanced/advice.html#directory-setup",
     "title": "A collection of miscellaneous advice",
-    "section": "",
-    "text": "Regardless of whether you are conducting a project locally or on Katana, I always like to create two directories:\n\nin: contains any input data. I never write to this directory!\nout: contains any output from jobs, such as RDS files, images, etc."
+    "section": "Directory setup",
+    "text": "Directory setup\nRegardless of whether you are conducting a project locally or on Katana, I always like to create two directories:\n\nin: contains any input data. I never write to this directory!\nout: contains any output from jobs, such as RDS files, images, etc."
   },
   {
     "objectID": "advanced/advice.html#log-files",
@@ -411,5 +411,19 @@
     "title": "A collection of miscellaneous advice",
     "section": "Paths",
     "text": "Paths\n\nhere package\nIt is annoying to re-set paths when you switch back and forth between your local machine and the cloud. Something that helps is using the “here” package. It helps set paths relative to “here”.\n\nhere::here()\n\n[1] \"/Users/z3535929/Library/CloudStorage/OneDrive-UNSW/kemps/codeRs_katana_workshop\"\n\n\n\nhere::here(\"out\", \"pval.RDS\")\n\n[1] \"/Users/z3535929/Library/CloudStorage/OneDrive-UNSW/kemps/codeRs_katana_workshop/out/pval.RDS\"\n\n\n\n\nToggle variable\nAlternatively, sometimes I set a clunky option: I have a single variable called local which sets a bunch of variable values depending on whether I am on my local machine or in the cloud.\nlocal &lt;- TRUE\nif(local)\n{\n  # local\n  codedir &lt;- here::here()\n  outdirbase &lt;- here::here()\n} else\n{\n  # cloud\n  codedir &lt;- Sys.getenv(\"codedir\")\n  outdirbase &lt;- Sys.getenv(\"outdirbase\")\n}"
+  },
+  {
+    "objectID": "advanced/advice.html#parallelisation",
+    "href": "advanced/advice.html#parallelisation",
+    "title": "A collection of miscellaneous advice",
+    "section": "",
+    "text": "You can parallelise by running one job with multi-cores (using purrr, snow, foreach, etc.), parallelise by running multiple jobs, or both!"
+  },
+  {
+    "objectID": "advanced/advice.html#resources",
+    "href": "advanced/advice.html#resources",
+    "title": "A collection of miscellaneous advice",
+    "section": "Resources",
+    "text": "Resources\n\nI try to be conservative with my memory usage.\n\nYou can use Rstudio’s built-in profiling tool to estimate memory usage on your local machine.\n\nI am anti-conservative with walltime.\n\nThe last thing you want is for a job to time out after a day of running when it was close to finishing!\n\n\nProfiling tool is in the top menu:"
   }
 ]
