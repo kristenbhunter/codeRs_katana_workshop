@@ -29,6 +29,8 @@ website:
             text: "Passing values"
           - href: advanced/loops.qmd
             text: "Loops"
+          - href: advanced/advice.qmd
+            text: "Misc Advice"
     right:
       - icon: github
         href: https://github.com/kristenbhunter/codeRs_katana_workshop
